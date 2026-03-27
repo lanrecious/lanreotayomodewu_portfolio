@@ -1,737 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lanre Omodewu | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<title>Omodewu Olanrewaju Portfolio</title>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- CSS -->
-  <style>
-    :root {
-      --primary: #38bdf8;
-      --accent: #22c55e;
-      --dark: #020617;
-      --card: #0f172a;
-    }
+<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background: var(--dark);
-      color: #fff;
-    }
-
-    /* HEADER */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 25px;
-      background: var(--dark);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-    }
-
-    .profile img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 2px solid var(--primary);
-    }
-
-    .name {
-      font-weight: 800;
-    }
-
-    .role {
-      font-weight: 800;
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    .cta-btn {
-      padding: 10px 25px;
-      border-radius: 30px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .cta-btn:hover {
-      transform: scale(1.05);
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      font-weight: 800;
-    }
-
-    .hero p {
-      color: #94a3b8;
-      margin-top: 10px;
-    }
-
-    /* ABOUT */
-    .about {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    /* WORK EXPERIENCE CARDS */
-    section {
-      padding: 60px 20px;
-    }
-
-    h2 {
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 30px;
-    }
-
-    .work-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 15px;
-      width: 300px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      color: var(--primary);
-    }
-
-    .card p {
-      margin: 10px 0;
-    }
-
-.project-carousel {
-    overflow: hidden;
-    max-width: 950px;
-    margin: auto;
-    position: relative;
+:root{
+  --green:#0f5132;
+  --lemon:#84cc16;
 }
 
-.project-track {
-    display: flex;
-    gap: 20px; /* space between slides */
-    transition: transform 0.5s ease-in-out;
+body{
+  margin:0;
+  font-family:Montserrat;
+  background:#fff;
 }
 
-.project-slide {
-    flex: 0 0 45%; /* 2 projects per row on medium screens */
-    height: 300px;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s;
+/* HEADER (STATIC) */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+  border-bottom:1px solid #eee;
 }
 
-.project-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
+.name{
+  font-weight:800;
 }
 
-.project-slide:hover img {
-    transform: scale(1.05);
+.role{
+  font-size:13px;
+  color:var(--lemon);
+  height:18px;
 }
 
-/* CTA Button */
-.project-slide .view-btn {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 20px;
-    border-radius: 30px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
+/* ICONS */
+.header-icons{
+  display:flex;
+  gap:12px;
 }
 
-.project-slide .view-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.header-icons a{
+  font-size:18px;
+  color:var(--green);
+  transition:.3s;
 }
 
-/* Arrows */
-.proj-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    border: none;
-    font-size: 28px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-    transition: 0.3s;
+.header-icons a:hover{
+  color:var(--lemon);
+  transform:scale(1.2);
 }
 
-.proj-arrow:hover {
-    background: linear-gradient(to right, var(--primary), var(--accent));
+/* ABOUT */
+.about{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  padding:50px 20px;
 }
 
-.proj-arrow.left { left: 10px; }
-.proj-arrow.right { right: 10px; }
-
-/* Responsive */
-@media(min-width: 900px){
-    .project-slide {
-        flex: 0 0 30%; /* 3 projects per row on large screens */
-        height: 350px;
-    }
+/* PHOTO ALBUM */
+.album{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  padding:20px;
 }
+
+.album img{
+  width:200px;
+  height:250px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+/* SECTION */
+section{
+  padding:60px 20px;
+}
+
+h2{
+  text-align:center;
+  color:var(--green);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+
+/* CARD */
+.card{
+  background:#f1f5f9;
+  padding:20px;
+  border-radius:15px;
+}
+
+/* IMAGE */
+.card img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 20px;
+  background:linear-gradient(to right,var(--green),var(--lemon));
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+}
+
+/* TOOLS */
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  max-width:600px;
+  margin:auto;
+  text-align:center;
+}
+
+.tool{
+  font-size:24px;
+  color:var(--green);
+}
+
+.tool span{
+  display:block;
+  font-size:12px;
+  margin-top:5px;
+}
+
+/* CONTACT */
+.contact{
+  max-width:500px;
+  margin:auto;
+}
+
+.contact input,
+.contact textarea{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+}
+
 /* FOOTER */
-footer {
-    background: #111827;     /* dark background for footer */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
+footer{
+  text-align:center;
+  padding:20px;
+  background:#f1f5f9;
 }
-     
-    /* PERSONAL GALLERY */
-    .personal-gallery {
-      overflow: hidden;
-      max-width: 900px;
-      margin: auto;
-      position: relative;
-    }
 
-    .personal-wrapper {
-      display: flex;
-      transition: 0.5s;
-    }
+/* RESPONSIVE */
+@media(max-width:768px){
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-    .personal-item {
-      position: relative;
-      width: 250px;
-      height: 300px;
-      border-radius: 15px;
-      overflow: hidden;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-    .personal-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
+  .header-icons a{
+    font-size:16px;
+  }
+}
 
-    .personal-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .personal-item .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: 0.3s;
-      text-align: center;
-      padding: 10px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .personal-item:hover .overlay {
-      opacity: 1;
-    }
-
-    /* TOOLS */
-    .tools-slider {
-      overflow: hidden;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .tools-track {
-      display: flex;
-      gap: 20px;
-    }
-
-    .tools-track div {
-      min-width: 100px;
-      height: 100px;
-      background: #020617;
-      border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      flex-shrink: 0;
-      color: #fff;
-    }
-
-    .tools-track span {
-      font-size: 12px;
-      margin-top: 5px;
-    }
-
-    /* TESTIMONIALS */
-    .testimonial-wrapper {
-      overflow: hidden;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .testimonial-track {
-      display: flex;
-      transition: 0.5s;
-    }
-
-    .testimonial {
-      min-width: 300px;
-      margin-right: 15px;
-      background: var(--card);
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    /* CONTACT */
-    .contact input,
-    .contact textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #020617;
-      color: #fff;
-    }
-
-    .contact button {
-      margin-top: 15px;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      cursor: pointer;
-    }
-
-    .contact .socials {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .contact .socials a {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-      border-radius: 15px;
-      font-size: 28px;
-      color: #000;
-      transition: 0.3s;
-    }
-
-    .contact .socials a:hover {
-      transform: scale(1.1);
-      background: linear-gradient(to right, var(--primary), var(--accent));
-      color: #fff;
-    }
-
-    /* MODAL */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 2000;
-    }
-
-    .modal-content {
-      background: var(--card);
-      margin: 50px auto;
-      padding: 20px;
-      max-width: 700px;
-      border-radius: 15px;
-      text-align: center;
-      position: relative;
-    }
-
-    .modal-content span {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    .modal-content img {
-      width: 80%;
-      margin: 10px 0;
-      border-radius: 15px;
-    }
-
-    /* FADE IN ANIMATION */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 0.8s;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* RESPONSIVE */
-    @media(min-width: 900px) {
-      .personal-item { width: 300px; height: 350px; }
-      .project-slide { min-width: 50%; }
-      .tools-track { gap: 30px; }
-      .testimonial { min-width: 350px; }
-      .card { width: 350px; }
-    }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</style>  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script type="text/javascript">
   // Initialize EmailJS with your Public Key
   emailjs.init("lGPXnapPRsJeORdXz");
-</script>
+</script>.
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="profile" onclick="openBio()">
-      <img src="profile.jpg" alt="Profile Picture">
-      <div>
-        <div class="name">Omodewu Olanrewaju Eyitayo</div>
-        <div class="role" id="role"></div>
-      </div>
-    </div>
-    <a href="#contact" class="cta-btn">Hire Me</a>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <h1>I Build Brands & Data Systems</h1>
-    <p>Strategy • Creativity • Analytics</p>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about fade-in">
-    <h2>About Me</h2>
-    <p>Omodewu Olanrewaju Eyitayo (Lanre Omodewu) is a multi-disciplinary professional specializing in Data & Business Analysis, Brand Strategy, Creative Design, and Fashion Consulting. He combines analytical thinking with creative excellence to build brands, systems, and experiences that are visually compelling and strategically sound.</p>
-  </section>
-
-  <!-- WORK EXPERIENCE -->
-  <section class="fade-in">
-    <h2>Work Experience</h2>
-    <div class="work-cards">
-      <div class="card">
-        <h3>Outer World Fashion</h3>
-        <p><b>Creative Director</b></p>
-        <p>Jan 2020 - Present</p>
-        <p>Built brand identity, fashion concepts, and guided visual communication strategies.</p>
-      </div>
-      <div class="card">
-        <h3>Freelance</h3>
-        <p><b>Data Analyst & Designer</b></p>
-        <p>Jun 2018 - Dec 2019</p>
-        <p>Created dashboards, designed visual reports, and implemented analytical solutions for clients.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-<section class="fade-in">
-  <h2>Projects</h2>
-  <div class="project-carousel">
-    <button class="proj-arrow left" onclick="moveProject(-1)">&#10094;</button>
-    <div class="project-track" id="projectTrack">
-      <div class="project-slide">
-        <img src="design1.jpg" alt="Outer World Fashion">
-        <div class="caption">Outer World Fashion</div>
-        <a href="#" class="view-btn" onclick="openProject('Outer World Fashion','Creative Director','Built brand identity and fashion concepts.','outer1.jpg,outer2.jpg')">View Project</a>
-      </div>
-      <div class="project-slide">
-        <img src="design2.jpg" alt="Freelance Analytics">
-        <div class="caption">Freelance Analytics</div>
-        <a href="#" class="view-btn" onclick="openProject('Freelance Analytics','Data Analyst & Designer','Created dashboards and reports for clients.','freelance1.jpg,freelance2.jpg')">View Project</a>
-      </div>
-      <div class="project-slide">
-        <img src="design3.jpg" alt="Brand Strategy">
-        <div class="caption">Brand Strategy</div>
-        <a href="#" class="view-btn" onclick="openProject('Brand Strategy','Consultant','Developed branding and creative campaigns.','brand1.jpg,brand2.jpg')">View Project</a>
-      </div>
-      <!-- add more projects as needed -->
-    </div>
-    <button class="proj-arrow right" onclick="moveProject(1)">&#10095;</button>
+<!-- HEADER -->
+<header>
+  <div>
+    <div class="name">OMODEWU<br> Olanrewaju Eyitayo </div>
+    <div id="role" class="role"></div>
   </div>
+
+  <div class="header-icons">
+    <a href="https://wa.me/2347047688941"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-discord"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>ABOUT ME</h2>
+  <p>
+    I am Omodewu Olanrewaju Eyitayo, a multi-disciplinary professional
+    specializing in Data Analytics, Brand Strategy, Creative Design,
+    and Fashion Consulting. I combine analytical thinking with
+    creativity to build impactful systems and brands.
+  </p>
 </section>
- 
-  <!-- PERSONAL GALLERY -->
-  <section class="fade-in">
-    <h2>Personal Gallery</h2>
-    <div class="personal-gallery">
-      <div class="personal-wrapper" id="personalWrapper">
-        <div class="personal-item">
-          <img src="me1.jpg" alt="">
-          <div class="overlay">Creative Direction</div>
-        </div>
-        <div class="personal-item">
-          <img src="me2.jpg" alt="">
-          <div class="overlay">Fashion Identity</div>
-        </div>
-        <div class="personal-item">
-          <img src="me3.jpg" alt="">
-          <div class="overlay">Design Lifestyle</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- TOOLS -->
-  <section class="fade-in">
-    <h2>Tools</h2>
-    <div class="tools-slider">
-      <div class="tools-track" id="toolsTrack">
-        <div><i class="fas fa-chart-line"></i><span>Analytics</span></div>
-        <div><i class="fas fa-database"></i><span>SQL</span></div>
-        <div><i class="fas fa-table"></i><span>Excel</span></div>
-        <div><i class="fab fa-python"></i><span>Python</span></div>
-        <div><i class="fas fa-paint-brush"></i><span>Canva</span></div>
-        <div><i class="fas fa-image"></i><span>Photoshop</span></div>
-        <div><i class="fas fa-camera-retro"></i><span>Lightroom</span></div>
-        <div><i class="fas fa-pen-nib"></i><span>Illustrator</span></div>
-        <!-- Duplicate for continuous animation -->
-        <div><i class="fas fa-chart-line"></i><span>Analytics</span></div>
-        <div><i class="fas fa-database"></i><span>SQL</span></div>
-        <div><i class="fas fa-table"></i><span>Excel</span></div>
-        <div><i class="fab fa-python"></i><span>Python</span></div>
-        <div><i class="fas fa-paint-brush"></i><span>Canva</span></div>
-        <div><i class="fas fa-image"></i><span>Photoshop</span></div>
-        <div><i class="fas fa-camera-retro"></i><span>Lightroom</span></div>
-        <div><i class="fas fa-pen-nib"></i><span>Illustrator</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="fade-in">
-    <h2>Testimonials</h2>
-    <div class="testimonial-wrapper">
-      <div class="testimonial-track" id="testimonialTrack">
-        <div class="testimonial">"Very creative and strategic thinker. Delivered beyond expectations."<br><strong>- Client A</strong></div>
-        <div class="testimonial">"Helped transform our brand completely."<br><strong>- Client B</strong></div>
-        <div class="testimonial">"Professional, reliable, and visionary."<br><strong>- Client C</strong></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
- <div class="contact">
-  <form id="contactForm">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Message" required></textarea>
-    <button type="submit">Send</button>
-    <div class="socials">
-      <a href="https://wa.me/2347047688941"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://instagram.com/lanre_omodewu"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/lanrecioustayo"><i class="fab fa-x-twitter"></i></a>
-    </div>
-  </form>
+<!-- PHOTO ALBUM -->
+<div class="album">
+  <img src="profile.jpg">
+  <img src="me1 jpg">
+  <img src="me2.jpg">
 </div>
-<footer>
-    <h5>© 2026 | Omodewu Olanrewaju Eyitayo | All rights reserved</h5>
-</footer>
-  <!-- MODAL -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span onclick="closeModal()">&times;</span>
-      <h2 id="mTitle"></h2>
-      <p id="mCompany"></p>
-      <p id="mDesc"></p>
-      <div id="mImages"></div>
-    </div>
+
+<!-- WORK -->
+<section>
+<h2>WORK EXPERIENCE</h2>
+
+<div class="grid">
+  <div class="card">
+    <h3>Outer World Fashion</h3>
+    <p>Creative Director</p>
+    <small>2025 - Present</small>
   </div>
 
-  <!-- SCRIPTS -->
-  <script>
-    // TYPEWRITER ROLE
-    const roles = ["Data Analyst", "Brand Strategist", "Creative Designer", "Fashion Consultant"];
-    let ri = 0, ci = 0, del = false;
+  <div class="card">
+    <h3>Eyini Global Venture</h3>
+    <p>Data Analyst</p>
+    <small>2025 - present</small>
+  </div>
 
-    function type() {
-      const txt = roles[ri];
-      document.getElementById("role").textContent = txt.substring(0, ci);
+  <div class="card">
+    <h3>O.O.E autos </h3>
+    <p>Brand Strategist</p>
+    <small>2024 - 2025</small>
+  </div>
 
-      if (!del && ci < txt.length) {
-        ci++;
-        setTimeout(type, 5000 / txt.length); // typing speed
-      } else if (del && ci > 0) {
-        ci--;
-        setTimeout(type, 50); // deleting speed
-      } else {
-        del = !del;
-        if (!del) ri = (ri + 1) % roles.length;
-        setTimeout(type, 500); // pause before next word
-      }
-    }
-    type();
+  <div class="card">
+    <h3>Nexus Studio</h3>
+    <p>Creative Designer</p>
+    <small>2024 - 2025</small>
+  </div>
+</div>
+</section>
 
-    // PERSONAL GALLERY SLIDER
-    let personalIndex = 0;
-    function movePersonal(step) {
-      const wrap = document.getElementById("personalWrapper");
-      const total = wrap.children.length;
-      personalIndex = (personalIndex + step + total) % total;
-      wrap.style.transform = `translateX(-${personalIndex * 250}px)`;
-    }
-    setInterval(() => { movePersonal(1); }, 4000);
+<!-- PROJECT -->
+<section>
+<h2>PROJECTS</h2>
 
-    // TESTIMONIALS SLIDER
-    let testIndex = 0;
-    function moveTest() {
-      const wrap = document.getElementById("testimonialTrack");
-      const total = wrap.children.length;
-      testIndex = (testIndex + 1) % total;
-      wrap.style.transform = `translateX(-${testIndex * 315}px)`;
-    }
-    setInterval(moveTest, 4000);
+<div class="grid">
+  <div class="card"><img src="https://source.unsplash.com/400x300/?branding"><a href="#" class="btn">View</a></div>
+  <div class="card"><img src="https://source.unsplash.com/400x300/?fashion"><a href="#" class="btn">View</a></div>
+  <div class="card"><img src="https://source.unsplash.com/400x300/?dashboard"><a href="#" class="btn">View</a></div>
+  <div class="card"><img src="https://source.unsplash.com/400x300/?design"><a href="#" class="btn">View</a></div>
+</div>
 
-    // TOOLS CONTINUOUS SCROLL
-    const toolsTrack = document.getElementById("toolsTrack");
-    let pos = 0;
-    function animateTools() {
-      pos -= 1;
-      if (pos <= -toolsTrack.scrollWidth / 2) pos = 0;
-      toolsTrack.style.transform = `translateX(${pos}px)`;
-      requestAnimationFrame(animateTools);
-    }
-    animateTools();
+<div style="text-align:center;">
+  <a href="#" class="btn">View All Projects</a>
+</div>
+</section>
 
-    // PROJECT MODAL
-    function openProject(title, company, desc, images) {
-      document.getElementById("modal").style.display = "block";
-      document.getElementById("mTitle").textContent = title;
-      document.getElementById("mCompany").textContent = company;
-      document.getElementById("mDesc").textContent = desc;
+<!-- SERVICES -->
+<section>
+<h2>SERVICES</h2>
 
-      const imgContainer = document.getElementById("mImages");
-      imgContainer.innerHTML = "";
+<div class="grid">
+  <div class="card"><h3>Data Analytics</h3><a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Data%20Analytics" class="btn">Request</a></div>
+  <div class="card"><h3>Branding</h3><a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Branding" class="btn">Request</a></div>
+  <div class="card"><h3>Fashion Design</h3><a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Fashion%20Design" class="btn">Request</a></div>
+  <div class="card"><h3>Consultation</h3><a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Consultation" class="btn">Request</a></div>
+</div>
+</section>
 
-      images.split(',').forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = title;
-        imgContainer.appendChild(img);
-      });
-    }
+<!-- TOOLS -->
+<section>
+<h2>TOOLS</h2>
 
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }let projectIndex = 0;
+<div class="tools-grid">
+  <div class="tool"><i class="fab fa-python"></i><span>Python</span></div>
+  <div class="tool"><i class="fas fa-database"></i><span>SQL</span></div>
+  <div class="tool"><i class="fas fa-table"></i><span>Excel</span></div>
+  <div class="tool"><i class="fas fa-chart-line"></i><span>Analytics</span></div>
+  <div class="tool"><i class="fas fa-image"></i><span>Photoshop</span></div>
+  <div class="tool"><i class="fas fa-pen-nib"></i><span>Illustrator</span></div>
+  <div class="tool"><i class="fas fa-paint-brush"></i><span>Canva</span></div>
+  <div class="tool"><i class="fas fa-camera"></i><span>Lightroom</span></div>
+</div>
+</section>
 
-function moveProject(step) {
-  const track = document.getElementById("projectTrack");
-  const total = track.children.length;
-  projectIndex = (projectIndex + step + total) % total;
-  const slideWidth = track.children[0].offsetWidth + 20; // 20px gap
-  track.style.transform = `translateX(-${projectIndex * slideWidth}px)`;
+<!-- CONTACT -->
+<section class="contact">
+<h2>REACH OUT TO ME</h2>
+
+<form>
+  <input type="text" placeholder="Name">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Omodewu Olanrewaju. All Rights Reserved.
+</footer>
+
+<script>
+const roles=["Data Analyst","Creative Designer","Brand Strategist"];
+let i=0,j=0,del=false;
+
+function type(){
+  let txt=roles[i];
+  document.getElementById("role").innerHTML=txt.substring(0,j);
+
+  if(!del && j<txt.length){j++;}
+  else if(del && j>0){j--;}
+  else{
+    del=!del;
+    if(!del) i=(i+1)%roles.length;
+  }
+  setTimeout(type,100);
 }
+type();
 
-    // OPEN BIO MODAL
-    function openBio() {
-      openProject(
-        "Omodewu Olanrewaju Eyitayo",
-        "About Me",
-        "Multi-disciplinary professional specializing in Data & Business Analysis, Brand Strategy, Creative Design, and Fashion Consulting.",
-        "profile.jpg"
-      );
-    }
 
-    // FADE-IN EFFECT
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    });
+</script>
 
-    document.querySelectorAll(".fade-in").forEach(el => obs.observe(el));
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  emailjs.sendForm('service_3qey7kd', 'template_sdv07gg', this)
-    .then(() => {
-      alert("Message sent successfully!");
-      this.reset();
-    }, (error) => {
-      alert("Failed to send message. Please try again.");
-      console.log(error);
-    });
-});
-  </script>
 </body>
-  </html>
+</html>
