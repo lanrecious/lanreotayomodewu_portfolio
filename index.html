@@ -1,237 +1,737 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lanre Omodewu | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanre Omodewu | Portfolio</title>
 
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --primary:#38bdf8;
-  --accent:#22c55e;
-  --dark:#020617;
-  --card:#0f172a;
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --accent: #22c55e;
+      --dark: #020617;
+      --card: #0f172a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: var(--dark);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+    }
+
+    .name {
+      font-weight: 800;
+    }
+
+    .role {
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .cta-btn {
+      padding: 10px 25px;
+      border-radius: 30px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      margin-top: 10px;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* WORK EXPERIENCE CARDS */
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .work-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 15px;
+      width: 300px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--primary);
+    }
+
+    .card p {
+      margin: 10px 0;
+    }
+
+.project-carousel {
+    overflow: hidden;
+    max-width: 950px;
+    margin: auto;
+    position: relative;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
-body{background:var(--dark);color:#fff;}
+.project-track {
+    display: flex;
+    gap: 20px; /* space between slides */
+    transition: transform 0.5s ease-in-out;
+}
 
-/* HEADER */
-header{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:15px 25px;background:var(--dark);position:sticky;top:0;z-index:1000;
+.project-slide {
+    flex: 0 0 45%; /* 2 projects per row on medium screens */
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
 }
-.profile{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.profile img{width:55px;height:55px;border-radius:50%;border:2px solid var(--primary);}
-.name{font-weight:800;}
-.role{font-size:12px;color:var(--primary);}
 
-/* HERO */
-.hero{text-align:center;padding:70px 20px;}
-.hero h1{font-size:36px;font-weight:800;}
-.hero p{color:#94a3b8;margin-top:10px;}
+.project-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
 
-/* SECTION */
-section{padding:50px 20px;}
-h2{color:var(--primary);margin-bottom:20px;text-align:center;}
+.project-slide:hover img {
+    transform: scale(1.05);
+}
 
-/* SLIDER */
-.slider-container{
-  position:relative;
-  overflow:hidden;
-  max-width:900px;
-  margin:auto;
+/* CTA Button */
+.project-slide .view-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
 }
-.slides-wrapper{
-  display:flex;
-  transition:transform 0.5s ease-in-out;
-}
-.slide{
-  min-width:100%;
-  position:relative;
-  border-radius:15px;
-  overflow:hidden;
-}
-.slide img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  transition:0.5s;
-}
-.slide:hover img{transform:scale(1.1);}
-.slide .caption{
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.6);color:#fff;font-size:18px;font-weight:600;
-  opacity:0;transition:0.5s;text-align:center;padding:10px;
-}
-.slide:hover .caption{opacity:1;}
-.prev,.next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:22px;
-  padding:10px;cursor:pointer;border-radius:50%;
-  z-index:10;
-}
-.prev{left:10px;}
-.next{right:10px;}
 
-/* CONTACT */
-.contact{max-width:500px;margin:auto;background:var(--card);padding:25px;border-radius:15px;}
-.contact input,.contact textarea{
-  width:100%;padding:12px;margin-top:10px;border:none;border-radius:8px;background:#020617;color:#fff;
+.project-slide .view-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.contact button{
-  margin-top:15px;width:100%;padding:12px;border:none;border-radius:10px;background:linear-gradient(to right,var(--primary),var(--accent));color:#fff;cursor:pointer;
-}
-.socials{display:flex;justify-content:center;gap:10px;margin-top:15px;}
-.socials a{background:#020617;padding:10px;border-radius:50%;color:#fff;}
 
+/* Arrows */
+.proj-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.proj-arrow:hover {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+}
+
+.proj-arrow.left { left: 10px; }
+.proj-arrow.right { right: 10px; }
+
+/* Responsive */
+@media(min-width: 900px){
+    .project-slide {
+        flex: 0 0 30%; /* 3 projects per row on large screens */
+        height: 350px;
+    }
+}
 /* FOOTER */
-footer{text-align:center;padding:20px;color:#64748b;}
+footer {
+    background: #111827;     /* dark background for footer */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+     
+    /* PERSONAL GALLERY */
+    .personal-gallery {
+      overflow: hidden;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
 
-/* BIO MODAL */
-.modal{
-  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.85);z-index:2000;overflow:auto;
-}
-.modal-content{
-  background:var(--card);margin:50px auto;padding:25px;border-radius:15px;
-  max-width:700px;text-align:center;position:relative;
-}
-.close{position:absolute;top:10px;right:15px;font-size:22px;cursor:pointer;}
-.modal-content img{width:150px;height:150px;border-radius:50%;border:3px solid var(--primary);margin-bottom:15px;}
-.modal-content p{margin-top:10px;color:#ccc;}
-</style>
+    .personal-wrapper {
+      display: flex;
+      transition: 0.5s;
+    }
+
+    .personal-item {
+      position: relative;
+      width: 250px;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .personal-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .personal-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .personal-item .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.3s;
+      text-align: center;
+      padding: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .personal-item:hover .overlay {
+      opacity: 1;
+    }
+
+    /* TOOLS */
+    .tools-slider {
+      overflow: hidden;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .tools-track {
+      display: flex;
+      gap: 20px;
+    }
+
+    .tools-track div {
+      min-width: 100px;
+      height: 100px;
+      background: #020617;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .tools-track span {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-wrapper {
+      overflow: hidden;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: 0.5s;
+    }
+
+    .testimonial {
+      min-width: 300px;
+      margin-right: 15px;
+      background: var(--card);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    /* CONTACT */
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #020617;
+      color: #fff;
+    }
+
+    .contact button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      cursor: pointer;
+    }
+
+    .contact .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contact .socials a {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 15px;
+      font-size: 28px;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    .contact .socials a:hover {
+      transform: scale(1.1);
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      color: #fff;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+    }
+
+    .modal-content {
+      background: var(--card);
+      margin: 50px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 15px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content span {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .modal-content img {
+      width: 80%;
+      margin: 10px 0;
+      border-radius: 15px;
+    }
+
+    /* FADE IN ANIMATION */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(min-width: 900px) {
+      .personal-item { width: 300px; height: 350px; }
+      .project-slide { min-width: 50%; }
+      .tools-track { gap: 30px; }
+      .testimonial { min-width: 350px; }
+      .card { width: 350px; }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  // Initialize EmailJS with your Public Key
+  emailjs.init("lGPXnapPRsJeORdXz");
+</script>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-<div class="profile" id="profileClick">
-<img src="profile.jpg">
-<div>
-<div class="name">Omodewu Olanrewaju Eyitayo</div>
-<div class="role" id="role"></div>
-</div>
-</div>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="profile" onclick="openBio()">
+      <img src="profile.jpg" alt="Profile Picture">
+      <div>
+        <div class="name">Omodewu Olanrewaju Eyitayo</div>
+        <div class="role" id="role"></div>
+      </div>
+    </div>
+    <a href="#contact" class="cta-btn">Hire Me</a>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
-<h1>I Build Brands & Data Systems</h1>
-<p>Strategy • Creativity • Analytics</p>
-</section>
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <h1>I Build Brands & Data Systems</h1>
+    <p>Strategy • Creativity • Analytics</p>
+  </section>
 
-<!-- WORK -->
-<section>
-<h2>My Work</h2>
-<div class="slider-container" id="workSlider">
-  <div class="slides-wrapper">
-    <div class="slide"><img src="design1.jpg"><div class="caption">Design</div></div>
-    <div class="slide"><img src="design2.jpg"><div class="caption">Branding</div></div>
-    <div class="slide"><img src="design3.jpg"><div class="caption">Data Analysis</div></div>
-    <div class="slide"><img src="design4.jpg"><div class="caption">Creative</div></div>
+  <!-- ABOUT -->
+  <section class="about fade-in">
+    <h2>About Me</h2>
+    <p>Omodewu Olanrewaju Eyitayo (Lanre Omodewu) is a multi-disciplinary professional specializing in Data & Business Analysis, Brand Strategy, Creative Design, and Fashion Consulting. He combines analytical thinking with creative excellence to build brands, systems, and experiences that are visually compelling and strategically sound.</p>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="fade-in">
+    <h2>Work Experience</h2>
+    <div class="work-cards">
+      <div class="card">
+        <h3>Outer World Fashion</h3>
+        <p><b>Creative Director</b></p>
+        <p>Jan 2020 - Present</p>
+        <p>Built brand identity, fashion concepts, and guided visual communication strategies.</p>
+      </div>
+      <div class="card">
+        <h3>Freelance</h3>
+        <p><b>Data Analyst & Designer</b></p>
+        <p>Jun 2018 - Dec 2019</p>
+        <p>Created dashboards, designed visual reports, and implemented analytical solutions for clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+<section class="fade-in">
+  <h2>Projects</h2>
+  <div class="project-carousel">
+    <button class="proj-arrow left" onclick="moveProject(-1)">&#10094;</button>
+    <div class="project-track" id="projectTrack">
+      <div class="project-slide">
+        <img src="design1.jpg" alt="Outer World Fashion">
+        <div class="caption">Outer World Fashion</div>
+        <a href="#" class="view-btn" onclick="openProject('Outer World Fashion','Creative Director','Built brand identity and fashion concepts.','outer1.jpg,outer2.jpg')">View Project</a>
+      </div>
+      <div class="project-slide">
+        <img src="design2.jpg" alt="Freelance Analytics">
+        <div class="caption">Freelance Analytics</div>
+        <a href="#" class="view-btn" onclick="openProject('Freelance Analytics','Data Analyst & Designer','Created dashboards and reports for clients.','freelance1.jpg,freelance2.jpg')">View Project</a>
+      </div>
+      <div class="project-slide">
+        <img src="design3.jpg" alt="Brand Strategy">
+        <div class="caption">Brand Strategy</div>
+        <a href="#" class="view-btn" onclick="openProject('Brand Strategy','Consultant','Developed branding and creative campaigns.','brand1.jpg,brand2.jpg')">View Project</a>
+      </div>
+      <!-- add more projects as needed -->
+    </div>
+    <button class="proj-arrow right" onclick="moveProject(1)">&#10095;</button>
   </div>
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
 </section>
+ 
+  <!-- PERSONAL GALLERY -->
+  <section class="fade-in">
+    <h2>Personal Gallery</h2>
+    <div class="personal-gallery">
+      <div class="personal-wrapper" id="personalWrapper">
+        <div class="personal-item">
+          <img src="me1.jpg" alt="">
+          <div class="overlay">Creative Direction</div>
+        </div>
+        <div class="personal-item">
+          <img src="me2.jpg" alt="">
+          <div class="overlay">Fashion Identity</div>
+        </div>
+        <div class="personal-item">
+          <img src="me3.jpg" alt="">
+          <div class="overlay">Design Lifestyle</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- CERTIFICATES -->
-<section>
-<h2>Certificates</h2>
-<div class="slider-container" id="certSlider">
-  <div class="slides-wrapper">
-    <div class="slide"><img src="cert1.jpg"><div class="caption">Canva Certified</div></div>
-    <div class="slide"><img src="cert2.jpg"><div class="caption">Business Management</div></div>
-    <div class="slide"><img src="cert3.jpg"><div class="caption">Digital Marketing</div></div>
-  </div>
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
-</section>
+  <!-- TOOLS -->
+  <section class="fade-in">
+    <h2>Tools</h2>
+    <div class="tools-slider">
+      <div class="tools-track" id="toolsTrack">
+        <div><i class="fas fa-chart-line"></i><span>Analytics</span></div>
+        <div><i class="fas fa-database"></i><span>SQL</span></div>
+        <div><i class="fas fa-table"></i><span>Excel</span></div>
+        <div><i class="fab fa-python"></i><span>Python</span></div>
+        <div><i class="fas fa-paint-brush"></i><span>Canva</span></div>
+        <div><i class="fas fa-image"></i><span>Photoshop</span></div>
+        <div><i class="fas fa-camera-retro"></i><span>Lightroom</span></div>
+        <div><i class="fas fa-pen-nib"></i><span>Illustrator</span></div>
+        <!-- Duplicate for continuous animation -->
+        <div><i class="fas fa-chart-line"></i><span>Analytics</span></div>
+        <div><i class="fas fa-database"></i><span>SQL</span></div>
+        <div><i class="fas fa-table"></i><span>Excel</span></div>
+        <div><i class="fab fa-python"></i><span>Python</span></div>
+        <div><i class="fas fa-paint-brush"></i><span>Canva</span></div>
+        <div><i class="fas fa-image"></i><span>Photoshop</span></div>
+        <div><i class="fas fa-camera-retro"></i><span>Lightroom</span></div>
+        <div><i class="fas fa-pen-nib"></i><span>Illustrator</span></div>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact Me</h2>
-<div class="contact">
-<form action="https://formsubmit.co/omodewue@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Message" required></textarea>
-<input type="hidden" name="_captcha" value="false">
-<button type="submit">Send Message</button>
-</form>
-<div class="socials">
-<a href="https://wa.me/2347047688941"><i class="fab fa-whatsapp"></i></a>
-<a href="https://instagram.com/lanre_omodewu"><i class="fab fa-instagram"></i></a>
-<a href="https://x.com/lanrecioustayo"><i class="fab fa-x-twitter"></i></a>
-</div>
-</div>
-</section>
+  <!-- TESTIMONIALS -->
+  <section class="fade-in">
+    <h2>Testimonials</h2>
+    <div class="testimonial-wrapper">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial">"Very creative and strategic thinker. Delivered beyond expectations."<br><strong>- Client A</strong></div>
+        <div class="testimonial">"Helped transform our brand completely."<br><strong>- Client B</strong></div>
+        <div class="testimonial">"Professional, reliable, and visionary."<br><strong>- Client C</strong></div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CONTACT -->
+ <div class="contact">
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Message" required></textarea>
+    <button type="submit">Send</button>
+    <div class="socials">
+      <a href="https://wa.me/2347047688941"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com/lanre_omodewu"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/lanrecioustayo"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </form>
+</div>
 <footer>
-© 2026 Omodewu Olanrewaju Eyitayo || All reserved rights
+    <h5>© 2026 | Omodewu Olanrewaju Eyitayo | All rights reserved</h5>
 </footer>
-
-<!-- BIO MODAL -->
-<div id="bioModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="profile.jpg" alt="lanre_omodewu">
-    <h2>Omodewu Olanrewaju Eyitayo</h2>
-    <p>Omodewu Olanrewaju Eyitayo (Lanre Omodewu) is a multi-disciplinary professional specializing in Data & Business Analysis, Brand Strategy, Creative Design, and Fashion Consulting. He combines analytical thinking with creative excellence to build brands, systems, and experiences that are both visually compelling and strategically sound.<br><br>
-With a strong foundation in data analysis, Lanre leverages insights to drive decision-making, optimize performance, and uncover opportunities for growth. As a brand strategist, he develops clear positioning, identity systems, and marketing approaches that help businesses stand out in competitive markets.<br><br>
-Beyond strategy, Lanre is a skilled creative designer known for crafting impactful visuals, brand identities, and digital experiences. His expertise also extends into the fashion industry, where he works as a fashion consultant and clothing brand designer helping individuals and businesses translate ideas into market-ready fashion concepts.<br><br>
-His work sits at the intersection of creativity, strategy, and data, allowing him to deliver solutions that are not only aesthetically strong but also results-driven.<br><br>
-Lanre is passionate about building innovative brands, empowering businesses, and creating meaningful value through design, analytics, and strategic thinking.</p>
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()">&times;</span>
+      <h2 id="mTitle"></h2>
+      <p id="mCompany"></p>
+      <p id="mDesc"></p>
+      <div id="mImages"></div>
+    </div>
   </div>
-</div>
 
-<script>
-// ROLE ANIMATION
-const roles=["Data Analyst","Brand Strategist","Creative Designer","Fashion Consultant"];
-let i=0;
-const roleEl=document.getElementById("role");
-setInterval(()=>{
-  roleEl.textContent=roles[i];
-  i=(i+1)%roles.length;
-},2000);
+  <!-- SCRIPTS -->
+  <script>
+    // TYPEWRITER ROLE
+    const roles = ["Data Analyst", "Brand Strategist", "Creative Designer", "Fashion Consultant"];
+    let ri = 0, ci = 0, del = false;
 
-// MODAL
-const modal=document.getElementById("bioModal");
-document.getElementById("profileClick").onclick=()=>modal.style.display="block";
-document.querySelector(".close").onclick=()=>modal.style.display="none";
-window.onclick=(e)=>{if(e.target==modal) modal.style.display="none";};
+    function type() {
+      const txt = roles[ri];
+      document.getElementById("role").textContent = txt.substring(0, ci);
 
-// SLIDER FUNCTION WITH AUTOPLAY
-function initSlider(containerId, interval=3000){
-  const container=document.getElementById(containerId);
-  const wrapper=container.querySelector(".slides-wrapper");
-  const slides=wrapper.children;
-  let index=0;
+      if (!del && ci < txt.length) {
+        ci++;
+        setTimeout(type, 5000 / txt.length); // typing speed
+      } else if (del && ci > 0) {
+        ci--;
+        setTimeout(type, 50); // deleting speed
+      } else {
+        del = !del;
+        if (!del) ri = (ri + 1) % roles.length;
+        setTimeout(type, 500); // pause before next word
+      }
+    }
+    type();
 
-  function showSlide(i){wrapper.style.transform=`translateX(-${i*100}%)`;}
+    // PERSONAL GALLERY SLIDER
+    let personalIndex = 0;
+    function movePersonal(step) {
+      const wrap = document.getElementById("personalWrapper");
+      const total = wrap.children.length;
+      personalIndex = (personalIndex + step + total) % total;
+      wrap.style.transform = `translateX(-${personalIndex * 250}px)`;
+    }
+    setInterval(() => { movePersonal(1); }, 4000);
 
-  container.querySelector(".next").onclick=()=>{index=(index+1)%slides.length;showSlide(index);};
-  container.querySelector(".prev").onclick=()=>{index=(index-1+slides.length)%slides.length;showSlide(index);};
+    // TESTIMONIALS SLIDER
+    let testIndex = 0;
+    function moveTest() {
+      const wrap = document.getElementById("testimonialTrack");
+      const total = wrap.children.length;
+      testIndex = (testIndex + 1) % total;
+      wrap.style.transform = `translateX(-${testIndex * 315}px)`;
+    }
+    setInterval(moveTest, 4000);
 
-  // Auto slide
-  setInterval(()=>{
-    index=(index+1)%slides.length;
-    showSlide(index);
-  }, interval);
+    // TOOLS CONTINUOUS SCROLL
+    const toolsTrack = document.getElementById("toolsTrack");
+    let pos = 0;
+    function animateTools() {
+      pos -= 1;
+      if (pos <= -toolsTrack.scrollWidth / 2) pos = 0;
+      toolsTrack.style.transform = `translateX(${pos}px)`;
+      requestAnimationFrame(animateTools);
+    }
+    animateTools();
+
+    // PROJECT MODAL
+    function openProject(title, company, desc, images) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("mTitle").textContent = title;
+      document.getElementById("mCompany").textContent = company;
+      document.getElementById("mDesc").textContent = desc;
+
+      const imgContainer = document.getElementById("mImages");
+      imgContainer.innerHTML = "";
+
+      images.split(',').forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = title;
+        imgContainer.appendChild(img);
+      });
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }let projectIndex = 0;
+
+function moveProject(step) {
+  const track = document.getElementById("projectTrack");
+  const total = track.children.length;
+  projectIndex = (projectIndex + step + total) % total;
+  const slideWidth = track.children[0].offsetWidth + 20; // 20px gap
+  track.style.transform = `translateX(-${projectIndex * slideWidth}px)`;
 }
 
-// Initialize sliders
-initSlider("workSlider", 4000);
-initSlider("certSlider", 4000);
-</script>
+    // OPEN BIO MODAL
+    function openBio() {
+      openProject(
+        "Omodewu Olanrewaju Eyitayo",
+        "About Me",
+        "Multi-disciplinary professional specializing in Data & Business Analysis, Brand Strategy, Creative Design, and Fashion Consulting.",
+        "profile.jpg"
+      );
+    }
 
+    // FADE-IN EFFECT
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    });
+
+    document.querySelectorAll(".fade-in").forEach(el => obs.observe(el));
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  emailjs.sendForm('service_3qey7kd', 'template_sdv07gg', this)
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    }, (error) => {
+      alert("Failed to send message. Please try again.");
+      console.log(error);
+    });
+});
+  </script>
 </body>
-</html>
+  </html>
