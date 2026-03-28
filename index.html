@@ -3,192 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Omodewu Olanrewaju Portfolio</title>
 
+<!-- Google Fonts & Font Awesome -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-:root{
-  --green:#0f5132;
-  --lemon:#84cc16;
+:root {
+  --green: #0f5132;
+  --lemon: #84cc16;
+  --white: #fff;
 }
 
-body{
-  margin:0;
-  font-family:Montserrat;
-  background:#fff;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
 }
 
-/* HEADER (STATIC) */
-header{
-  position:sticky;
-  top:0;
-  background:#fff;
-  z-index:1000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  border-bottom:1px solid #eee;
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(to right, var(--green), var(--lemon));
+  color: var(--white);
 }
 
-.name{
-  font-weight:800;
+.name {
+  font-weight: 800;
 }
 
-.role{
-  font-size:13px;
-  color:var(--lemon);
-  height:18px;
+.name span:first-child {
+  background: linear-gradient(to right, var(--green), var(--lemon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  display: inline-block;
 }
 
-/* ICONS */
-.header-icons{
-  display:flex;
-  gap:12px;
+.name span:last-child {
+  color: white;
+  display: inline-block;
 }
 
-.header-icons a{
-  font-size:18px;
-  color:var(--green);
-  transition:.3s;
+.role {
+  font-size: 13px;
+  color: var(--white);
+  height: 18px;
+  margin-top: 2px;
 }
 
-.header-icons a:hover{
-  color:var(--lemon);
-  transform:scale(1.2);
+/* HEADER ICONS */
+.header-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.header-icons a {
+  font-size: 18px;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.header-icons a:hover {
+  transform: scale(1.2);
+  color: var(--green);
 }
 
 /* ABOUT */
-.about{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
-  padding:50px 20px;
+.about {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 50px 20px;
 }
 
 /* PHOTO ALBUM */
-.album{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  padding:20px;
+.album {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px;
 }
 
-.album img{
-  width:200px;
-  height:250px;
-  object-fit:cover;
-  border-radius:15px;
+.album img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 /* SECTION */
-section{
-  padding:60px 20px;
+section {
+  padding: 60px 20px;
 }
 
-h2{
-  text-align:center;
-  color:var(--green);
+h2 {
+  text-align: center;
+  color: var(--green);
 }
 
 /* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-  max-width:900px;
-  margin:auto;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
 /* CARD */
-.card{
-  background:#f1f5f9;
-  padding:20px;
-  border-radius:15px;
+.card {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-/* IMAGE */
-.card img{
-  width:100%;
-  border-radius:10px;
+.card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 /* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 20px;
-  background:linear-gradient(to right,var(--green),var(--lemon));
-  color:#fff;
-  border-radius:25px;
-  text-decoration:none;
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, var(--green), var(--lemon));
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
 
 /* TOOLS */
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  max-width:600px;
-  margin:auto;
-  text-align:center;
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
-.tool{
-  font-size:24px;
-  color:var(--green);
+.tool {
+  font-size: 24px;
+  color: var(--green);
 }
 
-.tool span{
-  display:block;
-  font-size:12px;
-  margin-top:5px;
+.tool span {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 /* CONTACT */
-.contact{
-  max-width:500px;
-  margin:auto;
+.contact {
+  max-width: 500px;
+  margin: auto;
 }
 
 .contact input,
-.contact textarea{
-  width:100%;
-  margin-top:10px;
-  padding:10px;
+.contact textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#f1f5f9;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #f1f5f9;
 }
 
 /* RESPONSIVE */
-@media(max-width:768px){
-  .grid{
-    grid-template-columns:1fr;
+@media(max-width:768px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 
-  .tools-grid{
-    grid-template-columns:repeat(2,1fr);
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .header-icons a{
-    font-size:16px;
+  .header-icons a {
+    font-size: 16px;
   }
 }
+/* MODAL */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 2000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); 
+}
 
-</style>  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto; 
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+}
+
+.modal-content h3 {
+  color: var(--green);
+}
+
+.modal-content p {
+  margin: 15px 0;
+}
+
+.modal-images {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.modal-images img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-images img:hover {
+  transform: scale(1.05);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--green);
+}
+</style>
+
+<!-- EmailJS Initialization (optional) -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script type="text/javascript">
-  // Initialize EmailJS with your Public Key
   emailjs.init("lGPXnapPRsJeORdXz");
-</script>.
+</script>
 </head>
 
 <body>
@@ -196,17 +285,20 @@ footer{
 <!-- HEADER -->
 <header>
   <div>
-    <div class="name">OMODEWU<br> Olanrewaju Eyitayo </div>
+    <div class="name">
+      <span>OMODEWU</span><br>
+      <span>Olanrewaju Eyitayo</span>
+    </div>
     <div id="role" class="role"></div>
   </div>
 
   <div class="header-icons">
     <a href="https://wa.me/2347047688941"><i class="fab fa-whatsapp"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-discord"></i></a>
-    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.linkedin.com/in/lanre_omodewu"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/lanrecioustayo"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://instagram.com/lanre_omodewu"><i class="fab fa-instagram"></i></a>
+    <a href="https://discord.com/users/lanre_omodewu"><i class="fab fa-discord"></i></a>
+    <a href="https://tiktok.com/@prof.lanre"><i class="fab fa-tiktok"></i></a>
   </div>
 </header>
 
@@ -223,34 +315,30 @@ footer{
 
 <!-- PHOTO ALBUM -->
 <div class="album">
-  <img src="profile.jpg">
-  <img src="me1 jpg">
-  <img src="me2.jpg">
+  <img src="profile.jpg" alt="Profile">
+  <img src="me1.jpg" alt="Photo 1">
+  <img src="me2.jpg" alt="Photo 2">
 </div>
 
-<!-- WORK -->
+<!-- WORK EXPERIENCE -->
 <section>
 <h2>WORK EXPERIENCE</h2>
-
 <div class="grid">
   <div class="card">
     <h3>Outer World Fashion</h3>
     <p>Creative Director</p>
     <small>2025 - Present</small>
   </div>
-
   <div class="card">
     <h3>Eyini Global Venture</h3>
     <p>Data Analyst</p>
-    <small>2025 - present</small>
+    <small>2025 - Present</small>
   </div>
-
   <div class="card">
-    <h3>O.O.E autos </h3>
+    <h3>O.O.E Autos</h3>
     <p>Brand Strategist</p>
     <small>2024 - 2025</small>
   </div>
-
   <div class="card">
     <h3>Nexus Studio</h3>
     <p>Creative Designer</p>
@@ -259,26 +347,44 @@ footer{
 </div>
 </section>
 
-<!-- PROJECT -->
+<!-- PROJECTS -->
 <section>
 <h2>PROJECTS</h2>
-
 <div class="grid">
-  <div class="card"><img src="https://source.unsplash.com/400x300/?branding"><a href="#" class="btn">View</a></div>
-  <div class="card"><img src="https://source.unsplash.com/400x300/?fashion"><a href="#" class="btn">View</a></div>
-  <div class="card"><img src="https://source.unsplash.com/400x300/?dashboard"><a href="#" class="btn">View</a></div>
-  <div class="card"><img src="https://source.unsplash.com/400x300/?design"><a href="#" class="btn">View</a></div>
+  <div class="card">
+  <img src="project1.jpg">
+  <h3>Mainstream INC</h3>
+    <p>Sales,Profit and Loss, Trend analysis Dashboard</p>
+  <a href="#" class="btn view-project" 
+     data-title="Mainstream INC Dashboard" 
+     data-description="Interactive dashboard visualizing Mainstream Inc.’s sales, expenses, and profit across regions and business segments, revealing trends, performance gaps, and key drivers for informed decision-making. Provides quarterly insights, highlights seasonal losses, compares regional efficiency, and supports strategic planning through clear, responsive, and intuitive data visualization tools." 
+     data-images="p1img1.jpg,p1img2.jpg,p1img3.jpg">View Project</a>
 </div>
 
-<div style="text-align:center;">
-  <a href="#" class="btn">View All Projects</a>
+<div class="card">
+  <img src="project2.jpg">
+  <h3>Outer World Styles</h3>
+    <p>Corduroy Cadet Hat</p>
+  <a href="#" class="btn view-project" 
+     data-title="Cadet Hat Design" 
+     data-description="This is the design concept of outer world styles cadet cap. Showing all sides of the design." 
+     data-images="p2img1.jpg,p2img2.jpg,p2img3.jpg,p2img4.jpg">View Project</a>
 </div>
+
 </section>
+<!-- PROJECT MODAL -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
+    <div class="modal-images" id="modalImages"></div>
+  </div>
+</div>
 
 <!-- SERVICES -->
 <section>
 <h2>SERVICES</h2>
-
 <div class="grid">
   <div class="card"><h3>Data Analytics</h3><a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Data%20Analytics" class="btn">Request</a></div>
   <div class="card"><h3>Branding</h3><a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Branding" class="btn">Request</a></div>
@@ -290,7 +396,6 @@ footer{
 <!-- TOOLS -->
 <section>
 <h2>TOOLS</h2>
-
 <div class="tools-grid">
   <div class="tool"><i class="fab fa-python"></i><span>Python</span></div>
   <div class="tool"><i class="fas fa-database"></i><span>SQL</span></div>
@@ -306,11 +411,11 @@ footer{
 <!-- CONTACT -->
 <section class="contact">
 <h2>REACH OUT TO ME</h2>
-
-<form>
-  <input type="text" placeholder="Name">
-  <input type="email" placeholder="Email">
-  <textarea placeholder="Message"></textarea>
+<form action="https://formspree.io/f/yourFormID" method="POST">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit" class="btn">Send</button>
 </form>
 </section>
 
@@ -319,6 +424,7 @@ footer{
   © 2026 Omodewu Olanrewaju. All Rights Reserved.
 </footer>
 
+<!-- Typing animation for role -->
 <script>
 const roles=["Data Analyst","Creative Designer","Brand Strategist"];
 let i=0,j=0,del=false;
@@ -336,9 +442,41 @@ function type(){
   setTimeout(type,100);
 }
 type();
+// Select modal elements
+const modal = document.getElementById("projectModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalImages = document.getElementById("modalImages");
+const closeBtn = document.querySelector(".close");
 
+// Open modal on click
+document.querySelectorAll(".view-project").forEach(btn => {
+  btn.addEventListener("click", e => {
+    e.preventDefault();
+    const title = btn.dataset.title;
+    const description = btn.dataset.description;
+    const images = btn.dataset.images.split(',');
 
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    modalImages.innerHTML = ""; // clear previous
+
+    images.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      modalImages.appendChild(img);
+    });
+
+    modal.style.display = "block";
+  });
+});
+
+// Close modal
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = (e) => {
+  if(e.target == modal) modal.style.display = "none";
+};
 </script>
 
 </body>
-</html>
+  </html>
