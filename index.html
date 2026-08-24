@@ -6,1886 +6,1653 @@
 
 <title>Lanré Omodewu — Creative Designer</title>
 
-<meta name="description" content="Lanré Omodewu is a creative designer specializing in UI/UX design, graphic design, fashion design, brand identity, brand strategy and brand development.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root{
-  --bg:#f5f8ff;
-  --ink:#07152f;
-  --navy:#06142f;
-  --blue:#1264ff;
-  --blue2:#5aa0ff;
-  --soft:#e8f1ff;
-  --muted:#66738a;
-  --line:#d9e4f5;
-  --white:#fff;
-  --max:1180px;
-}
 
 /* =========================================================
    RESET
 ========================================================= */
 
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
-  scroll-behavior:smooth;
-  scroll-padding-top:100px;
+    scroll-behavior:smooth;
 }
 
 body{
-  margin:0;
-  width:100%;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:"DM Sans",sans-serif;
-  overflow-x:hidden;
-}
-
-body.menu-open{
-  overflow:hidden;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
+    background:#f5f8ff;
+    color:#07152f;
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
 }
 
 img{
-  display:block;
-  max-width:100%;
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 button,
 input,
 textarea{
-  font:inherit;
+    font-family:inherit;
 }
 
-.container{
-  width:min(var(--max),calc(100% - 40px));
-  margin-inline:auto;
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+    --bg:#f5f8ff;
+    --ink:#07152f;
+    --navy:#06142f;
+    --blue:#1264ff;
+    --blue2:#5aa0ff;
+    --soft:#e8f1ff;
+    --muted:#66738a;
+    --line:#d9e4f5;
+    --white:#fff;
+    --max:1180px;
 }
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.container{
+    width:min(var(--max),calc(100% - 40px));
+    margin-inline:auto;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn,
+.nav-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    border:0;
+    border-radius:999px;
+
+    padding:13px 18px;
+
+    font-size:12px;
+    font-weight:700;
+
+    background:var(--blue);
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.btn:hover,
+.nav-cta:hover{
+    transform:translateY(-2px);
+    background:#0755e8;
+    box-shadow:0 15px 30px rgba(18,100,255,.22);
+}
+
+.btn i,
+.nav-cta i{
+    width:23px;
+    height:23px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#fff;
+    color:var(--blue);
+
+    font-size:10px;
+}
+
 
 /* =========================================================
    HEADER
 ========================================================= */
 
 .site-header{
-  position:fixed;
-  z-index:100;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
+    position:fixed;
+    z-index:100;
 
-  width:min(1120px,calc(100% - 40px));
-  min-height:64px;
+    top:18px;
+    left:50%;
 
-  padding:8px 10px 8px 20px;
+    transform:translateX(-50%);
 
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:999px;
+    width:min(1120px,calc(100% - 40px));
+    min-height:64px;
 
-  background:rgba(7,21,47,.88);
+    padding:8px 10px 8px 20px;
 
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    background:rgba(7,21,47,.88);
+    backdrop-filter:blur(18px);
 
-  box-shadow:0 16px 50px rgba(8,30,75,.16);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    box-shadow:0 16px 50px rgba(8,30,75,.16);
 }
 
 .brand{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:19px;
-  font-weight:700;
-  letter-spacing:-.05em;
-  color:#fff;
-  white-space:nowrap;
+    font-family:"Space Grotesk";
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:-.05em;
+    color:#fff;
 }
 
 .brand span{
-  color:var(--blue2);
+    color:var(--blue2);
 }
 
 .nav{
-  display:flex;
-  gap:30px;
-  align-items:center;
+    display:flex;
+    align-items:center;
+    gap:30px;
 }
 
 .nav a{
-  font-size:12px;
-  color:#cbd7eb;
-  transition:.2s ease;
+    font-size:12px;
+    color:#cbd7eb;
+    transition:.2s;
 }
 
 .nav a:hover{
-  color:#fff;
-}
-
-.nav-cta,
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  border:0;
-  border-radius:999px;
-
-  padding:12px 17px;
-
-  font-size:12px;
-  font-weight:700;
-
-  cursor:pointer;
-
-  background:var(--blue);
-  color:#fff;
-
-  box-shadow:0 12px 30px rgba(18,100,255,.22);
-
-  transition:.25s ease;
-}
-
-.nav-cta i,
-.btn i{
-  display:grid;
-  place-items:center;
-
-  width:22px;
-  height:22px;
-  flex:0 0 22px;
-
-  border-radius:50%;
-
-  background:#fff;
-  color:var(--blue);
-
-  font-size:10px;
-}
-
-.nav-cta:hover,
-.btn:hover{
-  transform:translateY(-2px);
-  background:#0755e8;
+    color:#fff;
 }
 
 .menu-btn{
-  display:none;
+    display:none;
 
-  width:42px;
-  height:42px;
+    border:0;
+    background:none;
 
-  border:0;
-  border-radius:50%;
+    color:#fff;
+    font-size:20px;
 
-  background:rgba(255,255,255,.1);
-  color:#fff;
-
-  cursor:pointer;
-
-  place-items:center;
+    cursor:pointer;
 }
+
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
-  padding-top:112px;
+    padding-top:112px;
 }
 
 .hero-card{
-  position:relative;
+    position:relative;
 
-  min-height:680px;
+    min-height:680px;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  border-radius:38px;
+    border-radius:38px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0a1d42 0%,
-      #0a2f72 48%,
-      #1264ff 100%
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #0a1d42 0%,
+            #0a2f72 48%,
+            #1264ff 100%
+        );
 
-  box-shadow:0 35px 90px rgba(15,58,130,.22);
+    box-shadow:
+        0 35px 90px rgba(15,58,130,.22);
 }
 
-.hero-card:before{
-  content:"";
+.hero-card::before{
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  width:620px;
-  height:620px;
+    width:620px;
+    height:620px;
 
-  border-radius:50%;
+    right:-180px;
+    top:-240px;
 
-  right:-180px;
-  top:-240px;
+    border-radius:50%;
 
-  background:rgba(116,184,255,.35);
+    background:rgba(116,184,255,.35);
 
-  filter:blur(4px);
+    filter:blur(4px);
 }
 
-.hero-card:after{
-  content:"";
+.hero-card::after{
+    content:"";
 
-  position:absolute;
-  inset:0;
+    position:absolute;
+    inset:0;
 
-  background:
-    radial-gradient(
-      circle at 22% 60%,
-      rgba(73,157,255,.26),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 55%,
-      rgba(0,7,22,.55)
-    );
+    background:
+        radial-gradient(
+            circle at 22% 60%,
+            rgba(73,157,255,.26),
+            transparent 34%
+        ),
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(0,7,22,.55)
+        );
 
-  pointer-events:none;
+    pointer-events:none;
 }
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-inner{
-  position:relative;
-  z-index:2;
+    position:relative;
+    z-index:3;
 
-  min-height:680px;
+    min-height:680px;
 
-  padding:68px 58px;
+    padding:70px 58px 160px;
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    minmax(0,1fr)
-    minmax(280px,.85fr);
+    grid-template-columns:minmax(0,1fr) minmax(280px,.75fr);
 
-  align-items:center;
+    align-items:center;
 
-  gap:40px;
+    gap:40px;
 }
 
 .hero-eyebrow{
-  font-size:15px;
-  color:#dceaff;
-  font-weight:600;
-  margin-bottom:18px;
+    font-size:15px;
+    font-weight:600;
+
+    color:#dceaff;
+
+    margin-bottom:20px;
 }
 
 .hero h1{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:clamp(58px,8.8vw,112px);
+    font-size:clamp(60px,8.8vw,112px);
 
-  line-height:.82;
+    line-height:.82;
 
-  letter-spacing:-.075em;
+    letter-spacing:-.075em;
 
-  color:#fff;
+    color:#fff;
 }
 
 .hero h1 span{
-  color:transparent;
+    color:transparent;
 
-  -webkit-text-stroke:
-    1.5px rgba(255,255,255,.9);
+    -webkit-text-stroke:
+        1.5px rgba(255,255,255,.9);
 }
 
 .hero-copy{
-  justify-self:end;
+    align-self:end;
 
-  width:min(100%,360px);
+    max-width:360px;
 
-  margin-top:95px;
+    margin-bottom:45px;
 
-  color:#dceaff;
+    color:#dceaff;
 }
 
 .hero-copy h2{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:clamp(22px,2.2vw,26px);
+    font-size:26px;
+    line-height:1.05;
 
-  line-height:1.03;
+    color:#fff;
 
-  margin-bottom:15px;
-
-  color:#fff;
+    margin-bottom:15px;
 }
 
 .hero-copy p{
-  font-size:13px;
+    font-size:13px;
+    line-height:1.7;
 
-  line-height:1.7;
+    color:#c4d5ef;
 
-  color:#c4d5ef;
-
-  margin-bottom:22px;
+    margin-bottom:22px;
 }
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .hero-photo{
-  position:absolute;
+    position:absolute;
 
-  z-index:1;
+    z-index:2;
 
-  left:52%;
-  bottom:0;
+    left:52%;
+    bottom:0;
 
-  transform:translateX(-50%);
+    transform:translateX(-50%);
 
-  width:min(430px,38%);
-  height:585px;
+    width:430px;
+    height:585px;
 
-  object-fit:cover;
+    object-fit:cover;
+    object-position:center top;
 
-  object-position:center top;
+    filter:
+        saturate(.7)
+        contrast(1.08);
 
-  filter:
-    saturate(.7)
-    contrast(1.08);
+    mix-blend-mode:luminosity;
 
-  mix-blend-mode:luminosity;
+    opacity:.86;
 
-  opacity:.86;
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      #000 78%,
-      transparent 100%
-    );
-
-  -webkit-mask-image:
-    linear-gradient(
-      to bottom,
-      #000 78%,
-      transparent 100%
-    );
+    mask-image:
+        linear-gradient(
+            to bottom,
+            #000 78%,
+            transparent 100%
+        );
 }
 
+
+/* =========================================================
+   HERO ROLES
+========================================================= */
+
 .hero-services{
-  position:absolute;
+    position:absolute;
 
-  z-index:3;
+    z-index:5;
 
-  left:58px;
-  right:58px;
-  bottom:30px;
+    left:58px;
+    right:58px;
+    bottom:30px;
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    repeat(6,minmax(0,1fr));
+    grid-template-columns:
+        repeat(6,minmax(0,1fr));
 
-  gap:12px;
+    gap:12px;
 }
 
 .mini{
-  min-width:0;
+    border-top:
+        1px solid rgba(255,255,255,.28);
 
-  border-top:
-    1px solid rgba(255,255,255,.28);
+    padding-top:9px;
 
-  padding-top:9px;
-
-  color:#fff;
+    color:#fff;
 }
 
 .mini small{
-  display:block;
+    display:block;
 
-  color:#a8c9f6;
+    color:#a8c9f6;
 
-  font-size:9px;
+    font-size:9px;
 
-  margin-bottom:4px;
+    margin-bottom:4px;
 }
 
 .mini strong{
-  display:block;
-
-  font-size:10px;
-
-  line-height:1.2;
+    font-size:10px;
+    line-height:1.2;
 }
+
 
 /* =========================================================
    TRUST
 ========================================================= */
 
 .trust{
-  margin-top:0;
+    padding:25px 34px;
 
-  padding:25px 34px;
+    background:#fff;
 
-  background:#fff;
+    border:1px solid var(--line);
 
-  border:
-    1px solid var(--line);
+    border-top:0;
 
-  border-top:0;
+    border-radius:
+        0 0 32px 32px;
 
-  border-radius:
-    0 0 32px 32px;
-
-  box-shadow:
-    0 18px 45px rgba(18,54,110,.08);
+    box-shadow:
+        0 18px 45px rgba(18,54,110,.08);
 }
 
 .trust-row{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    1.25fr
-    repeat(4,minmax(0,1fr));
+    grid-template-columns:
+        1.25fr repeat(4,1fr);
 
-  align-items:center;
+    align-items:center;
 
-  gap:20px;
+    gap:20px;
 }
 
 .trust-label{
-  font-size:10px;
-  color:#66738a;
+    font-size:10px;
+    color:var(--muted);
 }
 
 .trust-label strong{
-  color:var(--ink);
+    color:var(--ink);
 }
 
 .trust-logo{
-  text-align:center;
+    text-align:center;
 
-  color:#29456f;
+    color:#29456f;
 
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-weight:600;
+    font-weight:600;
 
-  font-size:13px;
+    font-size:13px;
 }
 
 .trust-logo i{
-  color:var(--blue);
+    color:var(--blue);
 
-  margin-right:6px;
+    margin-right:6px;
 }
 
+
 /* =========================================================
-   GENERAL SECTIONS
+   SECTION
 ========================================================= */
 
 .section{
-  padding:105px 0 35px;
+    padding:105px 0 35px;
 }
 
 .section-grid{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    minmax(0,1fr)
-    minmax(280px,.78fr);
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(280px,.78fr);
 
-  gap:70px;
+    gap:90px;
 
-  align-items:end;
+    align-items:end;
 }
 
 .eyebrow-blue{
-  font-size:14px;
+    font-size:14px;
 
-  font-weight:700;
+    font-weight:700;
 
-  color:var(--blue);
+    color:var(--blue);
 
-  margin-bottom:13px;
+    margin-bottom:13px;
 }
 
 .section h2{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:
-    clamp(42px,5.4vw,72px);
+    font-size:
+        clamp(45px,5.4vw,72px);
 
-  line-height:.91;
+    line-height:.91;
 
-  letter-spacing:-.065em;
+    letter-spacing:-.065em;
+
+    color:var(--ink);
 }
 
 .lead{
-  font-size:
-    clamp(18px,2vw,21px);
+    font-size:21px;
 
-  line-height:1.18;
+    line-height:1.18;
 
-  font-weight:600;
+    font-weight:600;
 
-  margin-bottom:16px;
+    margin-bottom:16px;
 }
 
 .copy{
-  font-size:13px;
+    font-size:13px;
 
-  line-height:1.75;
+    line-height:1.75;
 
-  color:var(--muted);
+    color:var(--muted);
 
-  margin-bottom:22px;
+    margin-bottom:22px;
 }
+
 
 /* =========================================================
    PROJECTS
 ========================================================= */
 
 .projects{
-  padding:55px 0 105px;
+    padding:55px 0 105px;
 }
 
 .section-head{
-  display:flex;
+    display:flex;
 
-  align-items:end;
+    align-items:end;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  gap:25px;
-
-  margin-bottom:25px;
+    margin-bottom:25px;
 }
 
 .section-head h2{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:
-    clamp(34px,4vw,42px);
+    font-size:42px;
 
-  letter-spacing:-.05em;
+    letter-spacing:-.05em;
 }
 
 .section-head p{
-  font-size:11px;
-  color:#8190a8;
+    font-size:11px;
+
+    color:#8190a8;
 }
 
 .project-grid{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
 
-  gap:15px;
+    gap:15px;
 }
 
 .project-card{
-  position:relative;
+    position:relative;
 
-  min-height:430px;
+    min-height:430px;
 
-  border-radius:26px;
+    overflow:hidden;
 
-  overflow:hidden;
+    border-radius:26px;
 
-  background:#dfe9f8;
+    background:#dfe9f8;
 
-  cursor:pointer;
+    cursor:pointer;
 
-  border:
-    1px solid var(--line);
+    border:1px solid var(--line);
 }
 
 .project-card img{
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
+    min-height:430px;
 
-  min-height:430px;
+    object-fit:cover;
 
-  object-fit:cover;
-
-  transition:.5s;
+    transition:.5s;
 }
 
-.project-card:after{
-  content:"";
+.project-card::after{
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  inset:42% 0 0;
+    inset:42% 0 0;
 
-  background:
-    linear-gradient(
-      transparent,
-      rgba(4,15,35,.92)
-    );
+    background:
+        linear-gradient(
+            transparent,
+            rgba(4,15,35,.92)
+        );
 }
 
 .project-card:hover img{
-  transform:scale(1.045);
+    transform:scale(1.045);
 }
 
 .project-info{
-  position:absolute;
+    position:absolute;
 
-  z-index:2;
+    z-index:2;
 
-  left:20px;
-  right:20px;
-  bottom:19px;
+    left:20px;
+    right:20px;
+    bottom:19px;
 
-  color:#fff;
+    color:#fff;
 }
 
 .project-info .tag{
-  font-size:9px;
+    font-size:9px;
 
-  letter-spacing:.12em;
+    letter-spacing:.12em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  color:#a9cdfb;
+    color:#a9cdfb;
 }
 
 .project-info h3{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:22px;
+    font-size:22px;
 
-  margin:5px 0;
+    margin:5px 0;
 }
 
 .project-info p{
-  font-size:11px;
+    font-size:11px;
 
-  color:#d6e2f4;
+    color:#d6e2f4;
 }
+
 
 /* =========================================================
    EXPERIENCE
 ========================================================= */
 
 .experience{
-  padding:10px 0 100px;
+    padding:10px 0 100px;
 }
 
 .list{
-  border-top:
-    1px solid var(--line);
+    border-top:1px solid var(--line);
 }
 
 .item{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    minmax(0,1.2fr)
-    minmax(0,.9fr)
-    minmax(120px,.5fr);
+    grid-template-columns:
+        1.2fr .9fr .5fr;
 
-  gap:20px;
+    gap:20px;
 
-  padding:27px 0;
+    padding:27px 0;
 
-  border-bottom:
-    1px solid var(--line);
+    border-bottom:1px solid var(--line);
 
-  align-items:center;
+    align-items:center;
 }
 
 .item h3{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:19px;
+    font-size:19px;
 }
 
 .item p,
 .item time{
-  font-size:12px;
+    font-size:12px;
 
-  color:var(--muted);
+    color:var(--muted);
 }
 
 .item time{
-  text-align:right;
+    text-align:right;
 }
+
 
 /* =========================================================
    SERVICES
 ========================================================= */
 
 .services{
-  padding:10px 0 100px;
+    padding:10px 0 100px;
 }
 
 .services-grid{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
 
-  gap:14px;
+    gap:14px;
 }
 
 .service{
-  padding:26px;
+    padding:26px;
 
-  min-height:220px;
+    min-height:220px;
 
-  border-radius:24px;
+    border-radius:24px;
 
-  background:#fff;
+    background:#fff;
 
-  border:
-    1px solid var(--line);
+    border:1px solid var(--line);
 
-  transition:.25s;
+    transition:.25s;
 }
 
 .service:hover{
-  transform:translateY(-4px);
+    transform:translateY(-4px);
 
-  box-shadow:
-    0 18px 50px rgba(14,55,110,.1);
+    box-shadow:
+        0 18px 50px rgba(14,55,110,.1);
 }
 
 .service .icon{
-  color:var(--blue);
+    color:var(--blue);
 
-  font-size:20px;
+    font-size:20px;
 
-  margin-bottom:45px;
+    margin-bottom:45px;
 }
 
 .service h3{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:19px;
+    font-size:19px;
 
-  margin-bottom:8px;
+    margin-bottom:8px;
 }
 
 .service p{
-  font-size:11px;
+    font-size:11px;
 
-  line-height:1.6;
+    line-height:1.6;
 
-  color:var(--muted);
+    color:var(--muted);
 
-  margin-bottom:16px;
+    margin-bottom:16px;
 }
 
 .service a{
-  font-size:11px;
+    font-size:11px;
 
-  color:var(--blue);
+    color:var(--blue);
 
-  font-weight:700;
+    font-weight:700;
 }
+
 
 /* =========================================================
    TOOLS
 ========================================================= */
 
 .tools{
-  padding:5px 0 100px;
+    padding:5px 0 100px;
 }
 
 .tools-row{
-  display:flex;
+    display:flex;
 
-  flex-wrap:wrap;
+    flex-wrap:wrap;
 
-  gap:10px;
+    gap:10px;
 }
 
 .tool{
-  padding:12px 16px;
+    padding:12px 16px;
 
-  border:
-    1px solid var(--line);
+    border:1px solid var(--line);
 
-  border-radius:999px;
+    border-radius:999px;
 
-  background:#fff;
+    background:#fff;
 
-  color:#385170;
+    color:#385170;
 
-  font-size:12px;
+    font-size:12px;
 }
 
 .tool i{
-  color:var(--blue);
+    color:var(--blue);
 
-  margin-right:7px;
+    margin-right:7px;
 }
+
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
 .contact{
-  padding-bottom:60px;
+    padding-bottom:60px;
 }
 
 .contact-card{
-  position:relative;
+    position:relative;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  border-radius:34px;
+    border-radius:34px;
 
-  padding:62px;
+    padding:62px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #071633,
-      #0c3d91 62%,
-      #1264ff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #071633,
+            #0c3d91 62%,
+            #1264ff
+        );
 
-  color:#fff;
+    color:#fff;
 }
 
-.contact-card:after{
-  content:"";
+.contact-card::after{
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  width:460px;
-  height:460px;
+    width:460px;
+    height:460px;
 
-  border-radius:50%;
+    right:-190px;
+    top:-220px;
 
-  right:-190px;
-  top:-220px;
+    border-radius:50%;
 
-  background:
-    rgba(113,185,255,.28);
+    background:
+        rgba(113,185,255,.28);
 
-  filter:blur(10px);
+    filter:blur(10px);
 }
 
 .contact-grid{
-  position:relative;
+    position:relative;
 
-  z-index:2;
+    z-index:2;
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    minmax(0,1fr)
-    minmax(280px,.85fr);
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(280px,.85fr);
 
-  gap:70px;
+    gap:70px;
 }
 
 .contact h2{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:
-    clamp(46px,6vw,78px);
+    font-size:
+        clamp(48px,6vw,78px);
 
-  line-height:.9;
+    line-height:.9;
 
-  letter-spacing:-.065em;
+    letter-spacing:-.065em;
 
-  margin-bottom:18px;
+    margin-bottom:18px;
 }
 
 .contact p{
-  color:#c6d8f3;
+    color:#c6d8f3;
 
-  font-size:13px;
+    font-size:13px;
 
-  line-height:1.7;
+    line-height:1.7;
 
-  max-width:470px;
+    max-width:470px;
 }
 
 .form{
-  display:grid;
+    display:grid;
 
-  gap:11px;
+    gap:11px;
 }
 
 .form input,
 .form textarea{
-  width:100%;
+    width:100%;
 
-  border:
-    1px solid rgba(255,255,255,.18);
+    border:
+        1px solid rgba(255,255,255,.18);
 
-  background:
-    rgba(255,255,255,.08);
+    background:
+        rgba(255,255,255,.08);
 
-  border-radius:13px;
+    border-radius:13px;
 
-  padding:14px 15px;
+    padding:14px 15px;
 
-  color:#fff;
+    color:#fff;
 
-  outline:none;
-}
+    font:inherit;
 
-.form input:focus,
-.form textarea:focus{
-  border-color:
-    rgba(255,255,255,.5);
-
-  background:
-    rgba(255,255,255,.12);
+    outline:none;
 }
 
 .form input::placeholder,
 .form textarea::placeholder{
-  color:#aac0df;
+    color:#aac0df;
 }
 
 .form textarea{
-  min-height:125px;
+    min-height:125px;
 
-  resize:vertical;
+    resize:vertical;
 }
 
 .form .btn{
-  background:#fff;
+    background:#fff;
 
-  color:var(--blue);
+    color:var(--blue);
 
-  box-shadow:none;
+    box-shadow:none;
 }
 
 .form .btn i{
-  background:var(--blue);
+    background:var(--blue);
 
-  color:#fff;
+    color:#fff;
 }
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer{
-  padding:10px 0 35px;
+    padding:10px 0 35px;
 
-  color:#7b899f;
+    color:#7b899f;
 
-  font-size:11px;
+    font-size:11px;
 }
 
 .footer-row{
-  display:flex;
+    display:flex;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  align-items:center;
-
-  gap:20px;
+    align-items:center;
 }
 
 .socials{
-  display:flex;
+    display:flex;
 
-  gap:14px;
-}
-
-.socials a{
-  transition:.2s;
+    gap:14px;
 }
 
 .socials a:hover{
-  color:var(--blue);
+    color:var(--blue);
 }
+
 
 /* =========================================================
    MODAL
 ========================================================= */
 
 .modal{
-  display:none;
+    display:none;
 
-  position:fixed;
+    position:fixed;
 
-  inset:0;
+    inset:0;
 
-  z-index:300;
+    z-index:300;
 
-  background:
-    rgba(2,12,29,.78);
+    background:
+        rgba(2,12,29,.78);
 
-  backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
 
-  -webkit-backdrop-filter:blur(12px);
+    padding:25px;
 
-  padding:25px;
-
-  overflow:auto;
-}
-
-.modal.show{
-  display:block;
+    overflow:auto;
 }
 
 .modal-box{
-  position:relative;
+    position:relative;
 
-  width:min(900px,100%);
+    width:min(900px,100%);
 
-  margin:5vh auto;
+    margin:5vh auto;
 
-  background:#fff;
+    background:#fff;
 
-  border-radius:26px;
+    border-radius:26px;
 
-  padding:30px;
+    padding:30px;
 
-  color:var(--ink);
+    color:var(--ink);
 }
 
 .close{
-  position:absolute;
+    position:absolute;
 
-  right:20px;
-  top:15px;
+    right:20px;
+    top:15px;
 
-  width:38px;
-  height:38px;
+    font-size:29px;
 
-  border:0;
+    color:#73829a;
 
-  background:none;
-
-  font-size:29px;
-
-  color:#73829a;
-
-  cursor:pointer;
+    cursor:pointer;
 }
 
 .modal-box h3{
-  font-family:"Space Grotesk",sans-serif;
+    font-family:"Space Grotesk";
 
-  font-size:30px;
+    font-size:30px;
 
-  margin:
-    0 35px 10px 0;
+    margin:
+        0 35px 10px 0;
 }
 
 .modal-box p{
-  color:var(--muted);
+    color:var(--muted);
 
-  line-height:1.7;
+    line-height:1.7;
 
-  font-size:13px;
+    font-size:13px;
+
+    margin-bottom:20px;
 }
 
 .modal-images{
-  display:grid;
+    display:grid;
 
-  grid-template-columns:
-    repeat(3,minmax(0,1fr));
+    grid-template-columns:
+        repeat(3,1fr);
 
-  gap:10px;
-
-  margin-top:20px;
+    gap:10px;
 }
 
 .modal-images img{
-  width:100%;
-
-  height:180px;
-
-  object-fit:cover;
-
-  border-radius:12px;
-}
-
-/* =========================================================
-   TABLET — 901 TO 1100
-========================================================= */
-
-@media (max-width:1100px){
-
-  .container{
-    width:min(94%,var(--max));
-  }
-
-  .hero-inner{
-    padding:60px 45px;
-  }
-
-  .hero-services{
-    left:45px;
-    right:45px;
-  }
-
-  .hero-photo{
-    width:360px;
-  }
-
-  .section-grid{
-    gap:50px;
-  }
-
-  .contact-card{
-    padding:50px;
-  }
-}
-
-/* =========================================================
-   TABLET — 700 TO 900
-========================================================= */
-
-@media (max-width:900px){
-
-  .container{
-    width:calc(100% - 32px);
-  }
-
-  .site-header{
-    width:calc(100% - 32px);
-  }
-
-  /* MOBILE NAVIGATION */
-
-  .nav{
-    display:none;
-
-    position:absolute;
-
-    top:72px;
-    right:0;
-
-    width:220px;
-
-    padding:15px;
-
-    flex-direction:column;
-
-    align-items:stretch;
-
-    gap:4px;
-
-    border:
-      1px solid rgba(255,255,255,.1);
-
-    border-radius:20px;
-
-    background:#07152f;
-
-    box-shadow:
-      0 20px 50px rgba(0,0,0,.25);
-  }
-
-  .nav.active{
-    display:flex;
-  }
-
-  .nav a{
-    padding:12px;
-
-    border-radius:10px;
-  }
-
-  .nav a:hover{
-    background:
-      rgba(255,255,255,.08);
-  }
-
-  .nav-cta{
-    display:none;
-  }
-
-  .menu-btn{
-    display:grid;
-  }
-
-  /* HERO */
-
-  .hero{
-    padding-top:100px;
-  }
-
-  .hero-card{
-    min-height:720px;
-
-    border-radius:30px;
-  }
-
-  .hero-inner{
-    min-height:720px;
-
-    grid-template-columns:1fr;
-
-    padding:50px 35px;
-
-    align-items:start;
-  }
-
-  .hero h1{
-    font-size:
-      clamp(64px,11vw,90px);
-  }
-
-  .hero-copy{
-    justify-self:start;
-
-    margin-top:310px;
-
-    width:min(100%,350px);
-  }
-
-  .hero-photo{
-    left:auto;
-
-    right:7%;
-
-    transform:none;
-
-    width:300px;
-    height:430px;
-
-    opacity:.65;
-  }
-
-  .hero-services{
-    left:35px;
-    right:35px;
-
-    bottom:25px;
-
-    grid-template-columns:
-      repeat(3,minmax(0,1fr));
-  }
-
-  /* TRUST */
-
-  .trust{
-    padding:25px;
-  }
-
-  .trust-row{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
-
-  .trust-label{
-    grid-column:1/-1;
-  }
-
-  .trust-logo{
-    text-align:left;
-  }
-
-  /* SECTIONS */
-
-  .section{
-    padding-top:80px;
-  }
-
-  .section-grid{
-    grid-template-columns:1fr;
-
-    gap:35px;
-  }
-
-  /* PROJECTS */
-
-  .project-grid{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
-
-  .project-card{
-    min-height:400px;
-  }
-
-  .project-card img{
-    min-height:400px;
-  }
-
-  /* EXPERIENCE */
-
-  .item{
-    grid-template-columns:
-      1fr .8fr;
-  }
-
-  .item time{
-    text-align:right;
-  }
-
-  /* SERVICES */
-
-  .services-grid{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-  }
-
-  /* CONTACT */
-
-  .contact-grid{
-    grid-template-columns:1fr;
-
-    gap:40px;
-  }
-
-  .contact-card{
-    padding:45px 35px;
-  }
-}
-
-/* =========================================================
-   LARGE PHONE — 481 TO 699
-========================================================= */
-
-@media (max-width:699px){
-
-  .container{
-    width:calc(100% - 28px);
-  }
-
-  .site-header{
-    top:10px;
-
-    width:calc(100% - 20px);
-
-    min-height:58px;
-
-    padding-left:15px;
-  }
-
-  .brand{
-    font-size:16px;
-  }
-
-  /* HERO */
-
-  .hero{
-    padding-top:82px;
-  }
-
-  .hero-card{
-    min-height:780px;
-
-    border-radius:25px;
-  }
-
-  .hero-inner{
-    min-height:780px;
-
-    padding:38px 22px;
-  }
-
-  .hero-eyebrow{
-    font-size:13px;
-
-    margin-bottom:15px;
-  }
-
-  .hero h1{
-    font-size:
-      clamp(54px,17vw,75px);
-
-    line-height:.84;
-  }
-
-  .hero-photo{
-    right:-5%;
-
-    top:130px;
-
-    bottom:auto;
-
-    width:245px;
-
-    height:360px;
-
-    opacity:.45;
-  }
-
-  .hero-copy{
-    margin-top:295px;
-
     width:100%;
 
-    max-width:330px;
-  }
+    height:180px;
 
-  .hero-copy h2{
-    font-size:21px;
-  }
+    object-fit:cover;
 
-  .hero-copy p{
-    font-size:12px;
-
-    line-height:1.65;
-  }
-
-  .hero-copy .btn{
-    width:auto;
-  }
-
-  .hero-services{
-    left:22px;
-    right:22px;
-
-    bottom:20px;
-
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-
-    gap:10px;
-  }
-
-  .mini{
-    padding-top:8px;
-  }
-
-  .mini strong{
-    font-size:9px;
-  }
-
-  /* TRUST */
-
-  .trust{
-    padding:20px;
-
-    border-radius:
-      0 0 25px 25px;
-  }
-
-  .trust-row{
-    grid-template-columns:1fr;
-
-    gap:14px;
-  }
-
-  .trust-label{
-    grid-column:auto;
-  }
-
-  .trust-logo{
-    font-size:12px;
-  }
-
-  /* GENERAL */
-
-  .section{
-    padding:70px 0 25px;
-  }
-
-  .section h2{
-    font-size:
-      clamp(40px,13vw,58px);
-  }
-
-  .lead{
-    font-size:18px;
-  }
-
-  .copy{
-    font-size:12px;
-  }
-
-  /* SECTION HEAD */
-
-  .section-head{
-    display:block;
-
-    margin-bottom:20px;
-  }
-
-  .section-head h2{
-    font-size:35px;
-
-    margin-top:5px;
-  }
-
-  .section-head p{
-    margin-top:10px;
-  }
-
-  /* PROJECTS */
-
-  .projects{
-    padding:45px 0 75px;
-  }
-
-  .project-grid{
-    grid-template-columns:1fr;
-
-    gap:13px;
-  }
-
-  .project-card{
-    min-height:390px;
-
-    border-radius:22px;
-  }
-
-  .project-card img{
-    min-height:390px;
-  }
-
-  /* EXPERIENCE */
-
-  .experience{
-    padding-bottom:70px;
-  }
-
-  .item{
-    grid-template-columns:1fr;
-
-    gap:7px;
-
-    padding:22px 0;
-  }
-
-  .item h3{
-    font-size:18px;
-  }
-
-  .item p,
-  .item time{
-    font-size:11px;
-  }
-
-  .item time{
-    text-align:left;
-  }
-
-  /* SERVICES */
-
-  .services{
-    padding-bottom:70px;
-  }
-
-  .services-grid{
-    grid-template-columns:1fr;
-
-    gap:12px;
-  }
-
-  .service{
-    min-height:190px;
-
-    padding:23px;
-  }
-
-  .service .icon{
-    margin-bottom:30px;
-  }
-
-  /* TOOLS */
-
-  .tools{
-    padding-bottom:70px;
-  }
-
-  .tools-row{
-    gap:8px;
-  }
-
-  .tool{
-    padding:10px 13px;
-
-    font-size:11px;
-  }
-
-  /* CONTACT */
-
-  .contact{
-    padding-bottom:40px;
-  }
-
-  .contact-card{
-    border-radius:25px;
-
-    padding:35px 22px;
-  }
-
-  .contact h2{
-    font-size:
-      clamp(44px,13vw,60px);
-  }
-
-  .contact p{
-    font-size:12px;
-  }
-
-  .form input,
-  .form textarea{
-    font-size:13px;
-
-    padding:13px;
-  }
-
-  .form .btn{
-    width:100%;
-  }
-
-  /* FOOTER */
-
-  footer{
-    padding-bottom:25px;
-  }
-
-  .footer-row{
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:15px;
-  }
-
-  /* MODAL */
-
-  .modal{
-    padding:12px;
-  }
-
-  .modal-box{
-    margin:2vh auto;
-
-    padding:22px 18px;
-
-    border-radius:20px;
-  }
-
-  .modal-box h3{
-    font-size:24px;
-  }
-
-  .modal-images{
-    grid-template-columns:1fr;
-  }
-
-  .modal-images img{
-    height:220px;
-  }
+    border-radius:12px;
 }
 
+
 /* =========================================================
-   SMALL PHONE — 320 TO 480
+   TABLET
 ========================================================= */
 
-@media (max-width:480px){
+@media(max-width:1000px){
 
-  .container{
-    width:calc(100% - 20px);
-  }
+    .hero-inner{
+        grid-template-columns:1fr .8fr;
 
-  .site-header{
-    width:calc(100% - 16px);
-  }
+        padding-left:38px;
+        padding-right:38px;
+    }
 
-  .brand{
-    font-size:15px;
-  }
+    .hero-photo{
+        width:360px;
+        height:520px;
+    }
 
-  .hero{
-    padding-top:78px;
-  }
+    .hero-services{
+        left:38px;
+        right:38px;
 
-  .hero-card{
-    min-height:790px;
-  }
+        grid-template-columns:
+            repeat(3,1fr);
+    }
 
-  .hero-inner{
-    min-height:790px;
+    .section-grid{
+        gap:50px;
+    }
 
-    padding:34px 18px;
-  }
+    .project-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 
-  .hero h1{
-    font-size:
-      clamp(48px,17vw,64px);
-  }
+    .services-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 
-  .hero-photo{
-    width:210px;
-
-    height:315px;
-
-    right:-8%;
-
-    top:140px;
-  }
-
-  .hero-copy{
-    margin-top:285px;
-  }
-
-  .hero-copy h2{
-    font-size:19px;
-  }
-
-  .hero-copy p{
-    font-size:11px;
-  }
-
-  .hero-copy .btn{
-    width:100%;
-  }
-
-  .hero-services{
-    left:18px;
-    right:18px;
-
-    grid-template-columns:
-      1fr 1fr;
-
-    bottom:17px;
-
-    gap:9px;
-  }
-
-  .mini strong{
-    font-size:8px;
-  }
-
-  .mini small{
-    font-size:8px;
-  }
-
-  .section h2{
-    font-size:39px;
-  }
-
-  .section-head h2{
-    font-size:31px;
-  }
-
-  .project-card,
-  .project-card img{
-    min-height:350px;
-  }
-
-  .project-info h3{
-    font-size:20px;
-  }
-
-  .contact-card{
-    padding:30px 18px;
-  }
-
-  .contact h2{
-    font-size:43px;
-  }
-
-  .nav{
-    width:200px;
-  }
 }
 
+
 /* =========================================================
-   VERY SMALL PHONES — BELOW 360
+   MOBILE / TABLET
 ========================================================= */
 
-@media (max-width:360px){
+@media(max-width:760px){
 
-  .hero-card{
-    min-height:815px;
-  }
+    .container{
+        width:calc(100% - 28px);
+    }
 
-  .hero-inner{
-    min-height:815px;
-  }
 
-  .hero h1{
-    font-size:50px;
-  }
+    /* HEADER */
 
-  .hero-photo{
-    width:185px;
+    .site-header{
+        top:10px;
 
-    height:280px;
-  }
+        width:calc(100% - 24px);
 
-  .hero-copy{
-    margin-top:275px;
-  }
+        min-height:58px;
 
-  .hero-services{
-    grid-template-columns:1fr;
+        padding:
+            7px 8px 7px 17px;
+    }
 
-    gap:6px;
-  }
+    .brand{
+        font-size:16px;
+    }
 
-  .mini{
-    display:grid;
+    .nav-cta{
+        display:none;
+    }
 
-    grid-template-columns:
-      30px 1fr;
+    .menu-btn{
+        display:block;
+    }
 
-    align-items:center;
+    .nav{
+        display:none;
 
-    padding-top:5px;
-  }
+        position:absolute;
 
-  .mini small{
-    margin:0;
-  }
+        top:65px;
+        right:0;
 
-  .section h2{
-    font-size:36px;
-  }
+        width:190px;
+
+        padding:16px;
+
+        border-radius:18px;
+
+        background:#07152f;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .nav.active{
+        display:flex;
+    }
+
+
+    /* HERO */
+
+    .hero{
+        padding-top:85px;
+    }
+
+    .hero-card{
+        min-height:auto;
+
+        border-radius:25px;
+    }
+
+    .hero-inner{
+
+        min-height:auto;
+
+        padding:
+            48px 24px 35px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:0;
+    }
+
+    .hero-eyebrow{
+        font-size:13px;
+
+        margin-bottom:18px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(57px,17vw,82px);
+
+        line-height:.84;
+
+        position:relative;
+
+        z-index:5;
+    }
+
+    /*
+       IMPORTANT:
+       The image is no longer allowed to overlap
+       the text/button on mobile.
+    */
+
+    .hero-photo{
+        position:relative;
+
+        left:auto;
+        bottom:auto;
+
+        transform:none;
+
+        width:min(78%,320px);
+
+        height:auto;
+
+        max-height:420px;
+
+        margin:
+            -5px auto 0;
+
+        object-fit:cover;
+
+        object-position:center top;
+
+        opacity:.72;
+
+        align-self:center;
+
+        mask-image:
+            linear-gradient(
+                to bottom,
+                #000 70%,
+                transparent 100%
+            );
+    }
+
+    .hero-copy{
+
+        width:100%;
+
+        max-width:none;
+
+        margin:0;
+
+        position:relative;
+
+        z-index:8;
+    }
+
+    .hero-copy h2{
+        font-size:22px;
+
+        line-height:1.08;
+
+        margin-bottom:12px;
+    }
+
+    .hero-copy p{
+        font-size:12px;
+
+        line-height:1.65;
+
+        margin-bottom:20px;
+    }
+
+    /*
+       BUTTON IS NOW IN NORMAL FLOW
+       so it can NEVER hide behind roles.
+    */
+
+    .hero-copy .btn{
+        position:relative;
+
+        z-index:20;
+
+        margin-bottom:32px;
+    }
+
+
+    /* ROLES */
+
+    .hero-services{
+
+        position:relative;
+
+        left:auto;
+        right:auto;
+        bottom:auto;
+
+        width:100%;
+
+        z-index:10;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:15px 12px;
+
+        padding:
+            0 24px 25px;
+    }
+
+    .mini{
+        min-width:0;
+
+        padding-top:9px;
+    }
+
+    .mini strong{
+        font-size:10px;
+    }
+
+
+    /* TRUST */
+
+    .trust{
+        padding:22px 20px;
+
+        border-radius:
+            0 0 24px 24px;
+    }
+
+    .trust-row{
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .trust-logo{
+        text-align:left;
+    }
+
+
+    /* SECTIONS */
+
+    .section{
+        padding-top:75px;
+    }
+
+    .section-grid{
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .section h2{
+        font-size:
+            clamp(42px,12vw,60px);
+    }
+
+    .lead{
+        font-size:19px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects{
+        padding:
+            60px 0 80px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-head h2{
+        font-size:
+            clamp(36px,10vw,48px);
+    }
+
+    .section-head p{
+        margin-top:10px;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+
+        gap:14px;
+    }
+
+    .project-card{
+        min-height:420px;
+    }
+
+    .project-card img{
+        min-height:420px;
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience{
+        padding-bottom:80px;
+    }
+
+    .item{
+        grid-template-columns:1fr;
+
+        gap:7px;
+
+        padding:22px 0;
+    }
+
+    .item time{
+        text-align:left;
+    }
+
+
+    /* SERVICES */
+
+    .services{
+        padding-bottom:80px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service{
+        min-height:200px;
+    }
+
+    .service .icon{
+        margin-bottom:35px;
+    }
+
+
+    /* TOOLS */
+
+    .tools{
+        padding-bottom:80px;
+    }
+
+    .tool{
+        font-size:11px;
+
+        padding:10px 13px;
+    }
+
+
+    /* CONTACT */
+
+    .contact{
+        padding-bottom:45px;
+    }
+
+    .contact-card{
+        padding:35px 22px;
+
+        border-radius:25px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .contact h2{
+        font-size:
+            clamp(44px,13vw,65px);
+    }
+
+
+    /* FOOTER */
+
+    .footer-row{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:14px;
+    }
+
+
+    /* MODAL */
+
+    .modal{
+        padding:14px;
+    }
+
+    .modal-box{
+        margin:4vh auto;
+
+        padding:24px 18px;
+
+        border-radius:20px;
+    }
+
+    .modal-box h3{
+        font-size:25px;
+    }
+
+    .modal-images{
+        grid-template-columns:1fr;
+    }
+
 }
 
+
 /* =========================================================
-   TOUCH DEVICES
+   SMALL PHONES
 ========================================================= */
 
-@media (hover:none){
+@media(max-width:420px){
 
-  .project-card:hover img{
-    transform:none;
-  }
+    .hero-inner{
+        padding:
+            42px 20px 30px;
+    }
 
-  .service:hover{
-    transform:none;
+    .hero h1{
+        font-size:
+            clamp(52px,16.5vw,68px);
+    }
 
-    box-shadow:none;
-  }
+    .hero-photo{
+        width:90%;
 
-  .btn:hover,
-  .nav-cta:hover{
-    transform:none;
-  }
+        max-height:380px;
+    }
+
+    .hero-copy h2{
+        font-size:20px;
+    }
+
+    .hero-copy p{
+        font-size:11.5px;
+    }
+
+    .hero-services{
+        padding:
+            0 20px 22px;
+
+        gap:13px 10px;
+    }
+
+    .mini strong{
+        font-size:9px;
+    }
+
+    .mini small{
+        font-size:8px;
+    }
+
+    .project-card,
+    .project-card img{
+        min-height:350px;
+    }
+
+    .service{
+        padding:22px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:350px){
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero-services{
+        grid-template-columns:1fr;
+    }
+
+    .mini{
+        display:grid;
+
+        grid-template-columns:35px 1fr;
+
+        align-items:center;
+
+        gap:5px;
+    }
+
+    .mini small{
+        margin:0;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -1893,41 +1660,34 @@ footer{
 
 <header class="site-header">
 
-  <a class="brand" href="#home">
-    LANRÉ<span> OMODEWU</span>
-  </a>
+    <a class="brand" href="#home">
+        LANRÉ<span> OMODEWU</span>
+    </a>
 
-  <nav class="nav">
+    <nav class="nav">
 
-    <a href="#home">Home</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
 
-    <a href="#about">About</a>
+    </nav>
 
-    <a href="#projects">Projects</a>
+    <a class="nav-cta" href="#contact">
+        Get in touch
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
 
-    <a href="#services">Services</a>
-
-    <a href="#contact">Contact</a>
-
-  </nav>
-
-  <a class="nav-cta" href="#contact">
-    Get in touch
-    <i class="fa-solid fa-arrow-right"></i>
-  </a>
-
-  <button
-    class="menu-btn"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
-  >
-    <i class="fa-solid fa-bars"></i>
-  </button>
+    <button class="menu-btn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
 </header>
 
 
+
 <main id="home">
+
 
 <!-- =====================================================
      HERO
@@ -1935,127 +1695,134 @@ footer{
 
 <section class="hero container">
 
-  <div class="hero-card">
+<div class="hero-card">
 
     <div class="hero-inner">
 
-      <div>
+        <div class="hero-title">
 
-        <div class="hero-eyebrow">
-          Hey, I'm Lanré
+            <div class="hero-eyebrow">
+                Hey, I'm Lanré
+            </div>
+
+            <h1>
+                Creative<br>
+                <span>Designer</span>
+            </h1>
+
         </div>
 
-        <h1>
-          Creative<br>
-          <span>Designer</span>
-        </h1>
 
-      </div>
+        <div class="hero-copy">
 
+            <h2>
+                Good design should feel clear,
+                intentional and memorable.
+            </h2>
 
-      <div class="hero-copy">
+            <p>
+                I create identities, interfaces and
+                visual experiences that turn ideas into
+                brands people can see, understand and remember.
+            </p>
 
-        <h2>
-          Good design should feel clear,
-          intentional and memorable.
-        </h2>
+            <a class="btn" href="#projects">
+                Explore my work
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
-        <p>
-          I create identities, interfaces and visual
-          experiences that turn ideas into brands people
-          can see, understand and remember.
-        </p>
-
-        <a class="btn" href="#projects">
-          Explore my work
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
+        </div>
 
     </div>
 
 
+    <!-- PROFILE -->
+
     <img
-      class="hero-photo"
-      src="profile.png"
-      alt="Lanré Omodewu"
-      onerror="this.style.display='none'"
+        class="hero-photo"
+        src="profile.png"
+        alt="Lanré Omodewu"
+        onerror="this.style.display='none'"
     >
 
 
+    <!-- ROLES -->
+
     <div class="hero-services">
 
-      <div class="mini">
-        <small>01</small>
-        <strong>UI/UX Design</strong>
-      </div>
+        <div class="mini">
+            <small>01</small>
+            <strong>UI/UX Design</strong>
+        </div>
 
-      <div class="mini">
-        <small>02</small>
-        <strong>Graphic Design</strong>
-      </div>
+        <div class="mini">
+            <small>02</small>
+            <strong>Graphic Design</strong>
+        </div>
 
-      <div class="mini">
-        <small>03</small>
-        <strong>Fashion Design</strong>
-      </div>
+        <div class="mini">
+            <small>03</small>
+            <strong>Fashion Design</strong>
+        </div>
 
-      <div class="mini">
-        <small>04</small>
-        <strong>Brand Identity</strong>
-      </div>
+        <div class="mini">
+            <small>04</small>
+            <strong>Brand Identity</strong>
+        </div>
 
-      <div class="mini">
-        <small>05</small>
-        <strong>Brand Strategy</strong>
-      </div>
+        <div class="mini">
+            <small>05</small>
+            <strong>Brand Strategy</strong>
+        </div>
 
-      <div class="mini">
-        <small>06</small>
-        <strong>Brand Development</strong>
-      </div>
+        <div class="mini">
+            <small>06</small>
+            <strong>Brand Development</strong>
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 
-  <div class="trust">
+<!-- TRUST -->
+
+<div class="trust">
 
     <div class="trust-row">
 
-      <div class="trust-label">
-        <strong>Creative work across</strong>
-        <br>
-        brands, products & visual experiences
-      </div>
+        <div class="trust-label">
+            <strong>Creative work across</strong>
+            <br>
+            brands, products & visual experiences
+        </div>
 
-      <div class="trust-logo">
-        <i class="fa-regular fa-circle"></i>
-        Outer World
-      </div>
+        <div class="trust-logo">
+            <i class="fa-regular fa-circle"></i>
+            Outer World
+        </div>
 
-      <div class="trust-logo">
-        <i class="fa-solid fa-layer-group"></i>
-        O.O.E Autos
-      </div>
+        <div class="trust-logo">
+            <i class="fa-solid fa-layer-group"></i>
+            O.O.E Autos
+        </div>
 
-      <div class="trust-logo">
-        <i class="fa-solid fa-star"></i>
-        Creative Work
-      </div>
+        <div class="trust-logo">
+            <i class="fa-solid fa-star"></i>
+            Creative Work
+        </div>
 
-      <div class="trust-logo">
-        <i class="fa-solid fa-shapes"></i>
-        Brand Projects
-      </div>
+        <div class="trust-logo">
+            <i class="fa-solid fa-shapes"></i>
+            Brand Projects
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2064,51 +1831,52 @@ footer{
 
 <section class="section container" id="about">
 
-  <div class="section-grid">
+<div class="section-grid">
 
     <div>
 
-      <div class="eyebrow-blue">
-        Behind the Designs
-      </div>
+        <div class="eyebrow-blue">
+            Behind the Designs
+        </div>
 
-      <h2>
-        Shaping visual experiences
-        that make ideas impossible
-        to ignore.
-      </h2>
+        <h2>
+            Shaping visual experiences
+            that make ideas impossible
+            to ignore.
+        </h2>
 
     </div>
 
 
     <div>
 
-      <p class="lead">
-        I'm a creative designer focused on
-        building bold identities, intuitive
-        interfaces and meaningful visual systems.
-      </p>
+        <p class="lead">
+            I'm a creative designer focused on
+            building bold identities, intuitive
+            interfaces and meaningful visual systems.
+        </p>
 
-      <p class="copy">
-        I'm Omodewu Olanrewaju Eyitayo —
-        known professionally as Lanré Omodewu.
-        My work sits at the intersection of UI/UX,
-        graphic design, fashion, brand identity,
-        brand strategy and brand development.
-        I care about the idea behind the design
-        just as much as the final visual.
-      </p>
+        <p class="copy">
+            I'm Omodewu Olanrewaju Eyitayo —
+            known professionally as Lanré Omodewu.
+            My work sits at the intersection of UI/UX,
+            graphic design, fashion, brand identity,
+            brand strategy and brand development.
+            I care about the idea behind the design
+            just as much as the final visual.
+        </p>
 
-      <a class="btn" href="#contact">
-        Let's work together
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
+        <a class="btn" href="#contact">
+            Let's work together
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
     </div>
 
-  </div>
+</div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2117,135 +1885,126 @@ footer{
 
 <section class="projects container" id="projects">
 
-  <div class="section-head">
+<div class="section-head">
 
     <div>
 
-      <div class="eyebrow-blue">
-        Selected Work
-      </div>
+        <div class="eyebrow-blue">
+            Selected Work
+        </div>
 
-      <h2>
-        Work with a point of view.
-      </h2>
+        <h2>
+            Work with a point of view.
+        </h2>
 
     </div>
 
     <p>
-      Click a project to explore
+        Click a project to explore
     </p>
 
-  </div>
+</div>
 
 
-  <div class="project-grid">
+<div class="project-grid">
 
 
-    <article
-      class="project-card view-project"
+<article
+class="project-card view-project"
+data-title="Mainstream INC — Digital Dashboard"
+data-description="A digital dashboard interface project exploring clear information hierarchy, visual structure and an accessible user experience."
+data-images="project1.jpg">
 
-      data-title="Mainstream INC — Digital Dashboard"
-
-      data-description="A digital dashboard interface project exploring clear information hierarchy, visual structure and an accessible user experience."
-
-      data-images="project1.jpg"
+    <img
+        src="project1.jpg"
+        alt="Mainstream INC project"
     >
 
-      <img
-        src="project1.jpg"
-        alt="Mainstream INC digital dashboard"
-      >
-
-      <div class="project-info">
+    <div class="project-info">
 
         <div class="tag">
-          UI/UX Design
+            UI/UX Design
         </div>
 
         <h3>
-          Mainstream INC
+            Mainstream INC
         </h3>
 
         <p>
-          Digital dashboard experience
+            Digital dashboard experience
         </p>
 
-      </div>
+    </div>
 
-    </article>
+</article>
 
 
-    <article
-      class="project-card view-project"
 
-      data-title="Outer World Styles — Cadet Hat"
+<article
+class="project-card view-project"
+data-title="Outer World Styles — Cadet Hat"
+data-description="A fashion product concept for Outer World Styles, exploring silhouette, material, styling and product presentation."
+data-images="project2.jpg">
 
-      data-description="A fashion product concept for Outer World Styles, exploring silhouette, material, styling and product presentation."
-
-      data-images="project2.jpg"
-    >
-
-      <img
+    <img
         src="project2.jpg"
         alt="Outer World Styles cadet hat"
-      >
-
-      <div class="project-info">
-
-        <div class="tag">
-          Fashion Design
-        </div>
-
-        <h3>
-          Outer World Styles
-        </h3>
-
-        <p>
-          Cadet hat product concept
-        </p>
-
-      </div>
-
-    </article>
-
-
-    <article
-      class="project-card view-project"
-
-      data-title="TONY CHRIS — Winners Shirt"
-
-      data-description="A bold fashion graphic concept developed around a winners identity, combining typography and garment-focused visual direction."
-
-      data-images="project3.jpg"
     >
 
-      <img
-        src="project3.jpg"
-        alt="Tony Chris winners shirt"
-      >
-
-      <div class="project-info">
+    <div class="project-info">
 
         <div class="tag">
-          Graphic Design
+            Fashion Design
         </div>
 
         <h3>
-          TONY CHRIS
+            Outer World Styles
         </h3>
 
         <p>
-          Winners shirt concept
+            Cadet hat product concept
         </p>
 
-      </div>
+    </div>
 
-    </article>
+</article>
 
 
-  </div>
+
+<article
+class="project-card view-project"
+data-title="TONY CHRIS — Winners Shirt"
+data-description="A bold fashion graphic concept developed around a winners identity, combining typography and garment-focused visual direction."
+data-images="project3.jpg">
+
+    <img
+        src="project3.jpg"
+        alt="Tony Chris winners shirt"
+    >
+
+    <div class="project-info">
+
+        <div class="tag">
+            Graphic Design
+        </div>
+
+        <h3>
+            TONY CHRIS
+        </h3>
+
+        <p>
+            Winners shirt concept
+        </p>
+
+    </div>
+
+</article>
+
+
+</div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2254,97 +2013,96 @@ footer{
 
 <section class="experience container">
 
-  <div class="section-head">
+<div class="section-head">
 
     <div>
 
-      <div class="eyebrow-blue">
-        Experience
-      </div>
+        <div class="eyebrow-blue">
+            Experience
+        </div>
 
-      <h2>
-        Where I've made an impact.
-      </h2>
-
-    </div>
-
-  </div>
-
-
-  <div class="list">
-
-
-    <div class="item">
-
-      <h3>
-        Outer World Fashion
-      </h3>
-
-      <p>
-        Creative Director
-      </p>
-
-      <time>
-        April 2025 — Present
-      </time>
+        <h2>
+            Where I've made an impact.
+        </h2>
 
     </div>
 
+</div>
+
+
+<div class="list">
 
     <div class="item">
 
-      <h3>
-        Babtech School Of Technology
-      </h3>
+        <h3>
+            Outer World Fashion
+        </h3>
 
-      <p>
-        Intern
-      </p>
+        <p>
+            Creative Director
+        </p>
 
-      <time>
-        July 2026 — Present
-      </time>
+        <time>
+            April 2025 — Present
+        </time>
 
     </div>
 
 
     <div class="item">
 
-      <h3>
-        O.O.E Autos
-      </h3>
+        <h3>
+            Babtech School Of Technology
+        </h3>
 
-      <p>
-        Brand Strategist
-      </p>
+        <p>
+            Intern
+        </p>
 
-      <time>
-        2024 — 2025
-      </time>
+        <time>
+            July 2026 — Present
+        </time>
 
     </div>
 
 
     <div class="item">
 
-      <h3>
-        Nexus Studio
-      </h3>
+        <h3>
+            O.O.E Autos
+        </h3>
 
-      <p>
-        Creative Designer (Freelance)
-      </p>
+        <p>
+            Brand Strategist
+        </p>
 
-      <time>
-        February 2026 — Present
-      </time>
+        <time>
+            2024 — 2025
+        </time>
 
     </div>
 
 
-  </div>
+    <div class="item">
+
+        <h3>
+            Nexus Studio
+        </h3>
+
+        <p>
+            Creative Designer (Freelance)
+        </p>
+
+        <time>
+            February 2026 — Present
+        </time>
+
+    </div>
+
+</div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2353,161 +2111,167 @@ footer{
 
 <section class="services container" id="services">
 
-  <div class="section-head">
+<div class="section-head">
 
     <div>
 
-      <div class="eyebrow-blue">
-        What I Do
-      </div>
+        <div class="eyebrow-blue">
+            What I Do
+        </div>
 
-      <h2>
-        Design with purpose.
-      </h2>
+        <h2>
+            Design with purpose.
+        </h2>
 
     </div>
 
-  </div>
+</div>
 
 
-  <div class="services-grid">
+<div class="services-grid">
 
 
-    <div class="service">
+<div class="service">
 
-      <div class="icon">
+    <div class="icon">
         <i class="fa-solid fa-pen-ruler"></i>
-      </div>
+    </div>
 
-      <h3>
+    <h3>
         UI/UX Design
-      </h3>
+    </h3>
 
-      <p>
+    <p>
         Designing intuitive digital experiences,
         interfaces, user flows and visual systems.
-      </p>
+    </p>
 
-      <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20UI%2FUX%20Design">
+    <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20UI%2FUX%20Design">
         Start a project →
-      </a>
+    </a>
 
+</div>
+
+
+
+<div class="service">
+
+    <div class="icon">
+        <i class="fa-solid fa-fingerprint"></i>
     </div>
 
-
-    <div class="service">
-
-      <div class="icon">
-        <i class="fa-solid fa-fingerprint"></i>
-      </div>
-
-      <h3>
+    <h3>
         Brand Identity
-      </h3>
+    </h3>
 
-      <p>
+    <p>
         Creating distinctive logos, visual identities,
         typography systems and brand guidelines.
-      </p>
+    </p>
 
-      <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Brand%20Identity">
+    <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Brand%20Identity">
         Start a project →
-      </a>
+    </a>
 
+</div>
+
+
+
+<div class="service">
+
+    <div class="icon">
+        <i class="fa-solid fa-bezier-curve"></i>
     </div>
 
-
-    <div class="service">
-
-      <div class="icon">
-        <i class="fa-solid fa-bezier-curve"></i>
-      </div>
-
-      <h3>
+    <h3>
         Graphic Design
-      </h3>
+    </h3>
 
-      <p>
+    <p>
         Posters, campaigns, social graphics,
         editorial visuals and communication design.
-      </p>
+    </p>
 
-      <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Graphic%20Design">
+    <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Graphic%20Design">
         Start a project →
-      </a>
+    </a>
 
+</div>
+
+
+
+<div class="service">
+
+    <div class="icon">
+        <i class="fa-solid fa-shirt"></i>
     </div>
 
-
-    <div class="service">
-
-      <div class="icon">
-        <i class="fa-solid fa-shirt"></i>
-      </div>
-
-      <h3>
+    <h3>
         Fashion Design
-      </h3>
+    </h3>
 
-      <p>
+    <p>
         Fashion concepts, garment graphics,
         product direction and visual styling.
-      </p>
+    </p>
 
-      <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Fashion%20Design">
+    <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Fashion%20Design">
         Start a project →
-      </a>
+    </a>
 
+</div>
+
+
+
+<div class="service">
+
+    <div class="icon">
+        <i class="fa-solid fa-chess"></i>
     </div>
 
-
-    <div class="service">
-
-      <div class="icon">
-        <i class="fa-solid fa-chess"></i>
-      </div>
-
-      <h3>
+    <h3>
         Brand Strategy
-      </h3>
+    </h3>
 
-      <p>
+    <p>
         Positioning, personality, messaging and
         creative direction for ambitious brands.
-      </p>
+    </p>
 
-      <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Brand%20Strategy">
+    <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Brand%20Strategy">
         Start a project →
-      </a>
+    </a>
 
+</div>
+
+
+
+<div class="service">
+
+    <div class="icon">
+        <i class="fa-solid fa-arrow-up-right-dots"></i>
     </div>
 
-
-    <div class="service">
-
-      <div class="icon">
-        <i class="fa-solid fa-arrow-up-right-dots"></i>
-      </div>
-
-      <h3>
+    <h3>
         Brand Development
-      </h3>
+    </h3>
 
-      <p>
+    <p>
         Turning ideas into cohesive brands through
         identity, creative systems and execution.
-      </p>
+    </p>
 
-      <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Brand%20Development">
+    <a href="https://wa.me/2347047688941?text=Hello%20I%20am%20interested%20in%20Brand%20Development">
         Start a project →
-      </a>
+    </a>
 
-    </div>
+</div>
 
 
-  </div>
+</div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2516,63 +2280,64 @@ footer{
 
 <section class="tools container">
 
-  <div class="section-head">
+<div class="section-head">
 
     <div>
 
-      <div class="eyebrow-blue">
-        Creative Toolkit
-      </div>
+        <div class="eyebrow-blue">
+            Creative Toolkit
+        </div>
 
-      <h2>
-        Tools behind the work.
-      </h2>
+        <h2>
+            Tools behind the work.
+        </h2>
 
     </div>
 
-  </div>
+</div>
 
 
-  <div class="tools-row">
-
-    <div class="tool">
-      <i class="fab fa-figma"></i>
-      Figma
-    </div>
+<div class="tools-row">
 
     <div class="tool">
-      <i class="fas fa-bezier-curve"></i>
-      CorelDRAW
+        <i class="fab fa-figma"></i>
+        Figma
     </div>
 
     <div class="tool">
-      <i class="fas fa-image"></i>
-      Photoshop
+        <i class="fas fa-bezier-curve"></i>
+        CorelDRAW
     </div>
 
     <div class="tool">
-      <i class="fas fa-pen-nib"></i>
-      Illustrator
+        <i class="fas fa-image"></i>
+        Photoshop
     </div>
 
     <div class="tool">
-      <i class="fas fa-paint-brush"></i>
-      Canva
+        <i class="fas fa-pen-nib"></i>
+        Illustrator
     </div>
 
     <div class="tool">
-      <i class="fas fa-camera"></i>
-      Lightroom
+        <i class="fas fa-paint-brush"></i>
+        Canva
     </div>
 
     <div class="tool">
-      <i class="fas fa-pencil"></i>
-      Concepts
+        <i class="fas fa-camera"></i>
+        Lightroom
     </div>
 
-  </div>
+    <div class="tool">
+        <i class="fas fa-pencil"></i>
+        Concepts
+    </div>
+
+</div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -2581,94 +2346,93 @@ footer{
 
 <section class="contact container" id="contact">
 
-  <div class="contact-card">
+<div class="contact-card">
 
-    <div class="contact-grid">
-
-
-      <div>
-
-        <div
-          class="eyebrow-blue"
-          style="color:#86baff"
-        >
-          Let's Build Something
-        </div>
-
-        <h2>
-          Have an idea?<br>
-          Let's make it real.
-        </h2>
-
-        <p>
-          Whether you need a brand identity,
-          UI/UX experience, creative direction,
-          fashion concept or a complete brand
-          development system, let's talk about
-          what you're building.
-        </p>
-
-        <br>
-
-        <a
-          class="btn"
-          href="https://wa.me/2347047688941"
-        >
-          Chat on WhatsApp
-
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-      </div>
+<div class="contact-grid">
 
 
-      <form
-        class="form"
-        action="https://formspree.io/f/xykbkbqv"
-        method="POST"
-      >
+<div>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          autocomplete="name"
-          required
-        >
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          autocomplete="email"
-          required
-        >
-
-        <textarea
-          name="message"
-          placeholder="Tell me about your project..."
-          required
-        ></textarea>
-
-        <button
-          class="btn"
-          type="submit"
-        >
-          Send message
-
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-
-      </form>
-
-
+    <div
+        class="eyebrow-blue"
+        style="color:#86baff"
+    >
+        Let's Build Something
     </div>
 
-  </div>
+    <h2>
+        Have an idea?
+        <br>
+        Let's make it real.
+    </h2>
+
+    <p>
+        Whether you need a brand identity,
+        UI/UX experience, creative direction,
+        fashion concept or a complete brand
+        development system, let's talk about
+        what you're building.
+    </p>
+
+    <br>
+
+    <a
+        class="btn"
+        href="https://wa.me/2347047688941"
+    >
+        Chat on WhatsApp
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+<form
+    class="form"
+    action="https://formspree.io/f/xykbkbqv"
+    method="POST"
+>
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+    >
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+    >
+
+    <textarea
+        name="message"
+        placeholder="Tell me about your project..."
+        required
+    ></textarea>
+
+    <button
+        class="btn"
+        type="submit"
+    >
+        Send message
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+</form>
+
+
+</div>
+
+</div>
 
 </section>
 
+
 </main>
+
 
 
 <!-- =====================================================
@@ -2677,276 +2441,98 @@ footer{
 
 <footer class="container">
 
-  <div class="footer-row">
+<div class="footer-row">
 
     <div>
-      © 2026 Omodewu Olanrewaju.
-      All Rights Reserved.
+        © 2026 Omodewu Olanrewaju.
+        All Rights Reserved.
     </div>
 
     <div class="socials">
 
-      <a
-        href="https://x.com/lanre_omodewu"
-        aria-label="X"
-        target="_blank"
-        rel="noopener"
-      >
-        <i class="fab fa-x-twitter"></i>
-      </a>
+        <a href="https://x.com/lanre_omodewu">
+            <i class="fab fa-x-twitter"></i>
+        </a>
 
-      <a
-        href="https://instagram.com/lanre_omodewu_"
-        aria-label="Instagram"
-        target="_blank"
-        rel="noopener"
-      >
-        <i class="fab fa-instagram"></i>
-      </a>
+        <a href="https://instagram.com/lanre_omodewu_">
+            <i class="fab fa-instagram"></i>
+        </a>
 
-      <a
-        href="https://tiktok.com/@prof.lanre"
-        aria-label="TikTok"
-        target="_blank"
-        rel="noopener"
-      >
-        <i class="fab fa-tiktok"></i>
-      </a>
+        <a href="https://tiktok.com/@prof.lanre">
+            <i class="fab fa-tiktok"></i>
+        </a>
 
-      <a
-        href="https://linkedin.com/in/omodewu-olanrewaju-eyitayo"
-        aria-label="LinkedIn"
-        target="_blank"
-        rel="noopener"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
+        <a href="https://linkedin.com/in/omodewu-olanrewaju-eyitayo">
+            <i class="fab fa-linkedin"></i>
+        </a>
 
     </div>
 
-  </div>
+</div>
 
 </footer>
+
 
 
 <!-- =====================================================
      PROJECT MODAL
 ===================================================== -->
 
-<div
-  class="modal"
-  id="modal"
-  aria-hidden="true"
->
+<div class="modal" id="modal">
 
-  <div
-    class="modal-box"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalTitle"
-  >
+<div class="modal-box">
 
-    <button
-      class="close"
-      aria-label="Close project"
-    >
-      &times;
-    </button>
+    <span class="close">
+        &times;
+    </span>
 
     <h3 id="modalTitle"></h3>
 
     <p id="modalDescription"></p>
 
     <div
-      class="modal-images"
-      id="modalImages"
+        class="modal-images"
+        id="modalImages"
     ></div>
 
-  </div>
+</div>
 
 </div>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script>
 
 /* =========================================================
-   MOBILE NAVIGATION
+   MOBILE MENU
 ========================================================= */
 
 const menuBtn =
-  document.querySelector(".menu-btn");
+    document.querySelector(".menu-btn");
 
 const nav =
-  document.querySelector(".nav");
-
-const body =
-  document.body;
+    document.querySelector(".nav");
 
 
 menuBtn.addEventListener("click", () => {
 
-  const isOpen =
     nav.classList.toggle("active");
-
-  menuBtn.setAttribute(
-    "aria-expanded",
-    isOpen
-  );
-
-  body.classList.toggle(
-    "menu-open",
-    isOpen
-  );
-
-  const icon =
-    menuBtn.querySelector("i");
-
-  if(isOpen){
-
-    icon.classList.remove(
-      "fa-bars"
-    );
-
-    icon.classList.add(
-      "fa-xmark"
-    );
-
-  }else{
-
-    icon.classList.remove(
-      "fa-xmark"
-    );
-
-    icon.classList.add(
-      "fa-bars"
-    );
-
-  }
 
 });
 
 
-/* Close menu when navigation link is clicked */
+/* Close mobile menu when link is clicked */
 
-document
-  .querySelectorAll(".nav a")
-  .forEach(link => {
+document.querySelectorAll(".nav a")
+.forEach(link => {
 
-    link.addEventListener(
-      "click",
-      () => {
+    link.addEventListener("click", () => {
 
-        nav.classList.remove(
-          "active"
-        );
+        nav.classList.remove("active");
 
-        body.classList.remove(
-          "menu-open"
-        );
+    });
 
-        menuBtn.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        const icon =
-          menuBtn.querySelector("i");
-
-        icon.classList.remove(
-          "fa-xmark"
-        );
-
-        icon.classList.add(
-          "fa-bars"
-        );
-
-      }
-    );
-
-  });
-
-
-/* Close menu when clicking outside */
-
-document.addEventListener(
-  "click",
-  event => {
-
-    if(
-      !nav.contains(event.target) &&
-      !menuBtn.contains(event.target)
-    ){
-
-      nav.classList.remove(
-        "active"
-      );
-
-      body.classList.remove(
-        "menu-open"
-      );
-
-      menuBtn.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      const icon =
-        menuBtn.querySelector("i");
-
-      icon.classList.remove(
-        "fa-xmark"
-      );
-
-      icon.classList.add(
-        "fa-bars"
-      );
-
-    }
-
-  }
-);
-
-
-/* Close mobile menu on resize */
-
-window.addEventListener(
-  "resize",
-  () => {
-
-    if(window.innerWidth > 900){
-
-      nav.classList.remove(
-        "active"
-      );
-
-      body.classList.remove(
-        "menu-open"
-      );
-
-      menuBtn.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      const icon =
-        menuBtn.querySelector("i");
-
-      icon.classList.remove(
-        "fa-xmark"
-      );
-
-      icon.classList.add(
-        "fa-bars"
-      );
-
-    }
-
-  }
-);
+});
 
 
 /* =========================================================
@@ -2954,142 +2540,105 @@ window.addEventListener(
 ========================================================= */
 
 const modal =
-  document.getElementById("modal");
+    document.getElementById("modal");
 
-const modalTitle =
-  document.getElementById("modalTitle");
+const title =
+    document.getElementById("modalTitle");
 
-const modalDescription =
-  document.getElementById("modalDescription");
+const desc =
+    document.getElementById("modalDescription");
 
-const modalImages =
-  document.getElementById("modalImages");
+const images =
+    document.getElementById("modalImages");
 
-const closeButton =
-  document.querySelector(".close");
+const close =
+    document.querySelector(".close");
 
 
-document
-  .querySelectorAll(".view-project")
-  .forEach(card => {
+document.querySelectorAll(".view-project")
+.forEach(card => {
 
-    card.addEventListener(
-      "click",
-      () => {
+    card.addEventListener("click", () => {
 
-        modalTitle.textContent =
-          card.dataset.title;
+        title.textContent =
+            card.dataset.title;
 
-        modalDescription.textContent =
-          card.dataset.description;
+        desc.textContent =
+            card.dataset.description;
 
-        modalImages.innerHTML = "";
+        images.innerHTML = "";
 
         const imageList =
-          card.dataset.images
-            .split(",")
-            .map(src => src.trim())
-            .filter(Boolean);
-
+            card.dataset.images
+            .split(",");
 
         imageList.forEach(src => {
 
-          const image =
-            document.createElement("img");
+            const image =
+                document.createElement("img");
 
-          image.src = src;
+            image.src =
+                src.trim();
 
-          image.alt =
-            card.dataset.title;
+            image.alt =
+                card.dataset.title;
 
-          image.loading = "lazy";
+            image.onerror = () => {
+                image.remove();
+            };
 
-          image.onerror = () => {
-            image.remove();
-          };
-
-          modalImages.appendChild(
-            image
-          );
+            images.appendChild(image);
 
         });
 
-
-        modal.classList.add("show");
-
-        modal.setAttribute(
-          "aria-hidden",
-          "false"
-        );
+        modal.style.display = "block";
 
         document.body.style.overflow =
-          "hidden";
+            "hidden";
 
-      }
-    );
+    });
 
-  });
+});
 
 
 /* Close modal */
 
 function closeModal(){
 
-  modal.classList.remove(
-    "show"
-  );
+    modal.style.display = "none";
 
-  modal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-  document.body.style.overflow =
-    "";
+    document.body.style.overflow = "";
 
 }
 
 
-/* Close button */
-
-closeButton.addEventListener(
-  "click",
-  closeModal
+close.addEventListener(
+    "click",
+    closeModal
 );
 
 
-/* Close when clicking outside */
+modal.addEventListener("click", event => {
 
-modal.addEventListener(
-  "click",
-  event => {
+    if(event.target === modal){
 
-    if(
-      event.target === modal
-    ){
-
-      closeModal();
+        closeModal();
 
     }
 
-  }
-);
+});
 
 
-/* Escape key */
-
-document.addEventListener(
-  "keydown",
-  event => {
+document.addEventListener("keydown", event => {
 
     if(event.key === "Escape"){
 
-      closeModal();
+        closeModal();
 
     }
 
-  }
-);
+});
+
 
 </script>
 
